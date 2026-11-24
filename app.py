@@ -150,7 +150,10 @@ with tab2:
         prog = st.progress(0.0)
         for i, x in enumerate(smiles):
             r = analyze(x)
-            (bad.append(x) if r is None else res.append(r))
+            if r is None:
+                bad.append(x)
+            else:
+                res.append(r)
             prog.progress((i + 1) / max(1, len(smiles)))
         st.session_state.batch = {"res": res, "bad": bad}
     B = st.session_state.get("batch")
