@@ -3,3 +3,5 @@ numpy
 pandas
 streamlit
 python-dotenv
+matplotlib
+streamlit-ketcher

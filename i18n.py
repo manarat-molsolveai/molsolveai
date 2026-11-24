@@ -20,6 +20,11 @@ T = {
   "about": "MolSolveAI uses a graph neural network on atoms and bonds plus fingerprints, trained on public datasets (ESOL, BBBP, Tox21). Exact properties come from RDKit. Uncertainty is estimated from repeated stochastic passes.",
   "summary": "Batch summary", "n_dl": "Lipinski-clean", "n_alert": "With alerts", "n_tox": "With tox flags", "best": "Best QED", "sort": "Sort by",
   "detail": "Full report per molecule (click to open)", "dl_full": "Download full report (JSON)",
+  "ultra_mode": "Input method", "m_smiles": "SMILES", "m_name": "Search by name", "m_draw": "Draw molecule", "name_in": "Compound name (English, e.g. ibuprofen)",
+  "name_go": "Search PubChem", "name_bad": "Name not found or PubChem unreachable.", "name_ok": "Found",
+  "tab_cmp": "Compare", "cmp_help": "Pick 2 to 4 molecules to compare side by side.", "cmp_pick": "Pick from the library", "cmp_extra": "Extra SMILES (one per line)",
+  "cmp_go": "Compare", "cmp_need": "Need at least 2 valid molecules.", "verdict": "Plain-language verdict", "similar": "Closest known drugs", "radar": "Oral-drug radar (dashed red = limit)",
+  "dl_html": "Download shareable report (HTML)", "overall": "Overall",
   "limits": "Limits", "feature": "Feature", "price": "Price",
  },
  "ar": {
@@ -43,6 +48,11 @@ T = {
   "about": "يستخدم MolSolveAI شبكة عصبية رسومية على الذرات والروابط مع البصمات الجزيئية، ودُرّب على بيانات عامة (ESOL وBBBP وTox21). الخصائص الدقيقة من RDKit، وعدم اليقين من تشغيلات عشوائية متكررة.",
   "summary": "ملخص الدفعة", "n_dl": "مطابق لـ Lipinski", "n_alert": "فيه تنبيهات", "n_tox": "فيه مؤشرات سمّية", "best": "أفضل QED", "sort": "ترتيب حسب",
   "detail": "تقرير كامل لكل جزيء (اضغط للفتح)", "dl_full": "تنزيل التقرير الكامل (JSON)",
+  "ultra_mode": "طريقة الإدخال", "m_smiles": "SMILES", "m_name": "بحث بالاسم", "m_draw": "ارسم الجزيء", "name_in": "اسم المركب بالإنجليزية (مثل ibuprofen)",
+  "name_go": "ابحث في PubChem", "name_bad": "الاسم غير موجود أو PubChem غير متاح.", "name_ok": "تم العثور على",
+  "tab_cmp": "مقارنة", "cmp_help": "اختر من 2 إلى 4 جزيئات لمقارنتها جنباً إلى جنب.", "cmp_pick": "اختر من المكتبة", "cmp_extra": "SMILES إضافية (واحد في كل سطر)",
+  "cmp_go": "قارن", "cmp_need": "يلزم جزيئان صالحان على الأقل.", "verdict": "الحكم المبسط", "similar": "أقرب الأدوية المعروفة", "radar": "رادار الدواء الفموي (الخط الأحمر المتقطع = الحد)",
+  "dl_html": "تنزيل تقرير قابل للمشاركة (HTML)", "overall": "التقييم العام",
   "limits": "الحدود", "feature": "الميزة", "price": "السعر",
  },
 }

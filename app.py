@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 from rdkit import Chem
 from rdkit.Chem import Draw
-import config, infer, druglike
+import config, infer, druglike, ultra
 from chem import canonical
 from i18n import T, PLANS
 
@@ -73,7 +73,7 @@ def analyze(smi, passes=30):
     return r
 
 
-tab1, tab2, tab3, tab4 = st.tabs([t["tab_single"], t["tab_batch"], t["tab_plans"], t["tab_about"]])
+tab1, tab2, tab_cmp, tab3, tab4 = st.tabs([t["tab_single"], t["tab_batch"], t["tab_cmp"], t["tab_plans"], t["tab_about"]])
 
 def render(r, key):
     R, ts = r["rules"], r["tasks"]
@@ -83,6 +83,15 @@ def render(r, key):
     m1.metric(t["conf"], f"{r['confidence']}%", help=t["conf_help"])
     m2.metric("QED", f"{R['qed']:.2f}", help=t["qed"])
     c1.code(r["smiles"])
+    ov, items = ultra.verdict(r, lang)
+    st.subheader(f"{ultra.DOT[ov]} {t['verdict']}")
+    for col, txt in items:
+        st.write(f"{ultra.DOT[col]} {txt}")
+    rc1, rc2 = st.columns(2)
+    rc1.caption(t["radar"]); rc1.pyplot(ultra.radar([("", r)]))
+    rc2.caption(t["similar"])
+    for n_, sc in ultra.similar(r["smiles"]):
+        rc2.write(f"**{n_}**: {sc*100:.0f}%")
     st.subheader(t["props"])
     st.table(pd.DataFrame({"MW": [round(R["mw"], 2)], "LogP": [round(R["logp"], 2)], "TPSA": [round(R["tpsa"], 1)],
                            "HBD": [R["hbd"]], "HBA": [R["hba"]], "RotB": [R["rot"]], "Rings": [R["rings"]], "Heavy atoms": [R["heavy"]]}))
@@ -101,6 +110,8 @@ def render(r, key):
     st.write(("**" + t["risk"] + ":** " + ", ".join(r["tox_flags"])) if r["tox_flags"] else t["risk0"])
     st.download_button(t["dl_json"], json.dumps(r, ensure_ascii=False, indent=2), f"molsolveai_{key}.json",
                        "application/json", key=f"dl_{key}")
+    st.download_button(t["dl_html"], ultra.html_report([r], lang, t, config.TOX21_TASKS), f"molsolveai_{key}.html",
+                       "text/html", key=f"dlh_{key}")
 
 
 def flat(r):
@@ -116,8 +127,32 @@ def flat(r):
 
 
 with tab1:
-    choice = st.selectbox(t["examples"], [t["own"]] + list(EXAMPLES))
-    smi = st.text_input(t["smiles"], EXAMPLES.get(choice, EXAMPLES["Aspirin"]))
+    mode = st.radio(t["ultra_mode"], [t["m_smiles"], t["m_name"], t["m_draw"]], horizontal=True)
+    st.session_state.setdefault("cur", EXAMPLES["Aspirin"])
+    if mode == t["m_smiles"]:
+        choice = st.selectbox(t["examples"], [t["own"]] + list(EXAMPLES))
+        if choice != t["own"]:
+            st.session_state.cur = EXAMPLES[choice]
+        smi = st.text_input(t["smiles"], st.session_state.cur)
+        st.session_state.cur = smi
+    elif mode == t["m_name"]:
+        nm = st.text_input(t["name_in"], "ibuprofen")
+        if st.button(t["name_go"]):
+            found, err = ultra.lookup_name(nm)
+            if found:
+                st.session_state.cur = found
+            else:
+                st.error(t["name_bad"])
+        st.write(f"{t['name_ok']}: `{st.session_state.cur}`")
+        smi = st.session_state.cur
+    else:
+        try:
+            from streamlit_ketcher import st_ketcher
+            smi = st_ketcher(st.session_state.cur) or st.session_state.cur
+            st.session_state.cur = smi
+        except Exception:
+            st.error("Editor unavailable.")
+            smi = st.session_state.cur
     if st.button(t["go"]):
         if st.session_state.used >= plan["single"]:
             st.error(t["limit_hit"].format(n=plan["single"]))
@@ -171,6 +206,8 @@ with tab2:
         st.download_button(t["dl_csv"], table.to_csv(index=False), "molsolveai_batch.csv", "text/csv", key="dl_batch_csv")
         st.download_button(t["dl_full"], json.dumps(res, ensure_ascii=False, indent=2), "molsolveai_batch_full.json",
                            "application/json", key="dl_batch_json")
+        st.download_button(t["dl_html"], ultra.html_report(res, lang, t, config.TOX21_TASKS), "molsolveai_batch.html",
+                           "text/html", key="dl_batch_html")
         st.subheader(t["detail"])
         for i, r in enumerate(res):
             with st.expander(f"{i+1}. {r['smiles']}  |  QED {r['rules']['qed']:.2f}  |  {t['conf']} {r['confidence']}%"):
@@ -179,6 +216,31 @@ with tab2:
         st.warning(t["skipped"] + ": " + ", ".join(B["bad"][:20]))
     elif B is not None and not B["res"]:
         st.error(t["bad"])
+
+with tab_cmp:
+    st.write(t["cmp_help"])
+    pick = st.multiselect(t["cmp_pick"], list(ultra.LIB), default=["Aspirin", "Ibuprofen", "Caffeine"], max_selections=4)
+    extra = st.text_area(t["cmp_extra"], height=70)
+    if st.button(t["cmp_go"]):
+        ents = [(n, ultra.LIB[n]) for n in pick] + [(x.strip()[:18], x.strip()) for x in extra.splitlines() if x.strip()]
+        out = []
+        for n, x in ents[:4]:
+            r = analyze(x)
+            if r:
+                out.append((n, r))
+        st.session_state.cmp = out if len(out) >= 2 else None
+        if len(out) < 2:
+            st.error(t["cmp_need"])
+    C = st.session_state.get("cmp")
+    if C:
+        st.pyplot(ultra.radar(C))
+        cols = st.columns(len(C))
+        for col, (n, r) in zip(cols, C):
+            ov, _ = ultra.verdict(r, lang)
+            col.markdown(f"**{ultra.DOT[ov]} {n}**")
+            col.image(Draw.MolToImage(Chem.MolFromSmiles(r["smiles"]), size=(220, 180)))
+        tbl = pd.DataFrame([{"name": n, **{k: v for k, v in flat(r).items() if k != "smiles"}} for n, r in C]).set_index("name").T.astype(str)
+        st.dataframe(tbl, height=700)
 
 with tab3:
     st.subheader(t["plans_head"])
