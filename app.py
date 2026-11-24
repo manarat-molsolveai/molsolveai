@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 from rdkit import Chem
 from rdkit.Chem import Draw
-import config, infer, druglike, ultra
+import config, infer, druglike, ultra, ultra2
 from chem import canonical
 from i18n import T, PLANS
 
@@ -43,7 +43,12 @@ with st.sidebar:
     st.write(f"{t['plan']}: **{plan['name']}**")
     st.caption(t["left"].format(n=max(0, plan["single"] - st.session_state.used)))
 
-st.title("🧪 " + t["title"])
+LOGO = ("<svg width='46' height='46' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'><polygon points='24,58 40,58 36,22 28,22' fill='#0b5cad'/>"
+        "<rect x='26' y='14' width='12' height='9' fill='#f5b301'/><polygon points='24,14 32,6 40,14' fill='#0b5cad'/>"
+        "<polygon points='4,12 26,17 26,19 4,22' fill='#f5b301' opacity='.55'/><polygon points='60,12 38,17 38,19 60,22' fill='#f5b301' opacity='.55'/>"
+        "<rect x='20' y='56' width='24' height='4' fill='#0a3d75'/></svg>")
+st.markdown(f"<div style='display:flex;align-items:center;gap:12px;direction:ltr'>{LOGO}<div><div style='font-size:2rem;font-weight:700'>MolSolveAI</div>"
+            f"<div style='color:#0b5cad;font-weight:600'>{'منارة الإبداع  |  Manarat Al-Ibdaa'}</div></div></div>", unsafe_allow_html=True)
 st.caption(t["tag"])
 st.warning(t["disc"])
 
@@ -61,6 +66,10 @@ EXAMPLES = {"Aspirin": "CC(=O)Oc1ccccc1C(=O)O", "Caffeine": "Cn1cnc2c1c(=O)n(C)c
             "Ibuprofen": "CC(C)Cc1ccc(cc1)C(C)C(=O)O", "Benzene": "c1ccccc1", "Paracetamol": "CC(=O)Nc1ccc(O)cc1"}
 
 
+def L(en, ar):
+    return en if lang == "en" else ar
+
+
 def analyze(smi, passes=30):
     c = canonical(smi)
     if c is None:
@@ -73,7 +82,7 @@ def analyze(smi, passes=30):
     return r
 
 
-tab1, tab2, tab_cmp, tab3, tab4 = st.tabs([t["tab_single"], t["tab_batch"], t["tab_cmp"], t["tab_plans"], t["tab_about"]])
+tab1, tab2, tab_cmp, tab_opt, tab_quiz, tab3, tab4 = st.tabs([t["tab_single"], t["tab_batch"], t["tab_cmp"], L("Optimizer", "محسّن الجزيء"), L("Challenge", "تحدي الكيمياء"), t["tab_plans"], t["tab_about"]])
 
 def render(r, key):
     R, ts = r["rules"], r["tasks"]
@@ -108,6 +117,12 @@ def render(r, key):
                                "± %": [round(ts[k]["uncertainty"] * 100) for k in config.TOX21_TASKS]}), hide_index=True, height=460)
     st.bar_chart(pd.Series({k: ts[k]["prob"] for k in config.TOX21_TASKS}))
     st.write(("**" + t["risk"] + ":** " + ", ".join(r["tox_flags"])) if r["tox_flags"] else t["risk0"])
+    st.subheader(L("Why? Atom-level explanation", "لماذا؟ تفسير على مستوى الذرات"))
+    ep = st.selectbox(L("Explain which prediction", "فسّر أي تنبؤ"), ["LogS", "BBB"] + config.TOX21_TASKS, key=f"ep_{key}")
+    sc = ultra2.atom_scores(r["smiles"], model, ep)
+    st.image(ultra2.heatmap_png(r["smiles"], sc))
+    st.caption(L("Red atoms push the prediction UP, blue atoms push it DOWN. Approximate: it masks each atom in the graph part of the model only.",
+                 "الذرات الحمراء ترفع قيمة التنبؤ، والزرقاء تخفضها. تقريبي: يخفي كل ذرة في الجزء الرسومي من النموذج فقط."))
     st.download_button(t["dl_json"], json.dumps(r, ensure_ascii=False, indent=2), f"molsolveai_{key}.json",
                        "application/json", key=f"dl_{key}")
     st.download_button(t["dl_html"], ultra.html_report([r], lang, t, config.TOX21_TASKS), f"molsolveai_{key}.html",
@@ -242,6 +257,68 @@ with tab_cmp:
         tbl = pd.DataFrame([{"name": n, **{k: v for k, v in flat(r).items() if k != "smiles"}} for n, r in C]).set_index("name").T.astype(str)
         st.dataframe(tbl, height=700)
 
+with tab_opt:
+    st.write(L("Pick a molecule and a goal. MolSolveAI generates virtual variants (add F, swap groups, ring N...) and ranks them by predicted improvement.",
+               "اختر جزيئاً وهدفاً. يولّد MolSolveAI متغيرات افتراضية (إضافة F، استبدال مجموعات، نيتروجين في الحلقة...) ويرتبها حسب التحسن المتوقع."))
+    o_name = st.selectbox(L("Starting molecule", "الجزيء الأساسي"), list(ultra.LIB), index=0)
+    o_extra = st.text_input(L("...or your own SMILES (optional)", "...أو SMILES خاص بك (اختياري)"), "")
+    goals = {"sol": L("Higher solubility", "ذوبانية أعلى"), "tox": L("Lower toxicity signals", "إشارات سمّية أقل"),
+             "bbb_up": L("Better brain penetration", "عبور أفضل للدماغ"), "bbb_down": L("Less brain penetration", "عبور أقل للدماغ"),
+             "qed": L("Higher drug-likeness (QED)", "شبه دواء أعلى (QED)")}
+    goal = st.selectbox(L("Goal", "الهدف"), list(goals), format_func=lambda k: goals[k])
+    if st.button(L("Optimize", "حسّن")):
+        base_smi = o_extra.strip() or ultra.LIB[o_name]
+        if canonical(base_smi) is None:
+            st.error(t["bad"])
+        else:
+            base, cands = ultra2.optimize(canonical(base_smi), analyze, goal)
+            st.session_state.opt = (base, cands, goal)
+    O = st.session_state.get("opt")
+    if O:
+        base, cands, g_ = O
+        st.markdown(f"**{L('Starting point', 'نقطة البداية')}:** `{base['smiles']}`")
+        if not cands or cands[0][0] <= 0:
+            st.info(L("No variant improved this goal.", "لا يوجد متغير يحسّن هذا الهدف."))
+        for rank, (delta, name_, s_, r_) in enumerate(cands, 1):
+            if delta <= 0:
+                continue
+            c0, c1 = st.columns([1, 2])
+            c0.image(Draw.MolToImage(Chem.MolFromSmiles(s_), size=(240, 190)))
+            ov_, _ = ultra.verdict(r_, lang)
+            c1.markdown(f"**#{rank} {ultra.DOT[ov_]} {name_}**  \n`{s_}`")
+            c1.write(f"LogS {r_['tasks']['LogS']['value']:.2f} | BBB {r_['tasks']['BBB']['prob']*100:.0f}% | QED {r_['rules']['qed']:.2f} | tox flags {len(r_['tox_flags'])}")
+            c1.write(f"{L('Improvement score', 'درجة التحسن')}: +{delta:.2f}")
+        st.warning(L("These are virtual ideas scored by an estimate model. They are NOT tested, may be hard or impossible to make, and may be worse in reality.",
+                     "هذه أفكار افتراضية يقيّمها نموذج تقديري. لم تُختبر، وقد يصعب أو يستحيل تصنيعها، وقد تكون أسوأ في الواقع."))
+
+with tab_quiz:
+    st.write(L("Test your chemistry intuition. Answers use exact RDKit calculations, not AI guesses.",
+               "اختبر حدسك الكيميائي. الإجابات من حسابات RDKit الدقيقة وليست تخميناً من الذكاء الاصطناعي."))
+    st.session_state.setdefault("score", [0, 0])
+    if "q" not in st.session_state:
+        st.session_state.q = ultra2.quiz_question(ultra.LIB)
+    nm, sm, kind, thr, truth, fact = st.session_state.q
+    texts = {"mw": L(f"Is the molecular weight above {thr}?", f"هل الوزن الجزيئي أكبر من {thr}؟"),
+             "logp": L(f"Is LogP above {thr}?", f"هل LogP أكبر من {thr}؟"),
+             "hbd": L(f"Does it have more than {thr} hydrogen-bond donors?", f"هل فيه أكثر من {thr} مانح هيدروجين؟"),
+             "lip": L("Does it follow Lipinski's rule of five (0 violations)?", "هل يطابق قاعدة ليبنسكي الخمسية (0 مخالفات)؟")}
+    st.image(Draw.MolToImage(Chem.MolFromSmiles(sm), size=(320, 240)))
+    st.subheader(texts[kind])
+    cA, cB, cC = st.columns(3)
+    ans = None
+    if cA.button(L("Yes", "نعم"), key="qy"): ans = True
+    if cB.button(L("No", "لا"), key="qn"): ans = False
+    if cC.button(L("Next molecule", "جزيء آخر"), key="qx"):
+        st.session_state.q = ultra2.quiz_question(ultra.LIB); st.session_state.pop("qres", None); st.rerun()
+    if ans is not None:
+        ok = ans == truth
+        st.session_state.score[0] += int(ok); st.session_state.score[1] += 1
+        st.session_state.qres = (ok, nm, fact)
+    if st.session_state.get("qres"):
+        ok, nm_, fact_ = st.session_state.qres
+        (st.success if ok else st.error)(f"{'✅' if ok else '❌'} {nm_}: {fact_}")
+    st.metric(L("Score", "النتيجة"), f"{st.session_state.score[0]} / {st.session_state.score[1]}")
+
 with tab3:
     st.subheader(t["plans_head"])
     st.info(t["plans_note"])
@@ -250,4 +327,9 @@ with tab3:
     st.subheader(t["api_head"]); st.write(t["api_note"])
 
 with tab4:
+    st.markdown(f"### {L('About the brand', 'عن العلامة')}")
+    st.write(L("MolSolveAI is a product of Manarat Al-Ibdaa: making molecular science visible, explainable and fun with AI, in Arabic and English.",
+               "MolSolveAI من علامة منارة الإبداع: نجعل علم الجزيئات مرئياً ومفهوماً وممتعاً بالذكاء الاصطناعي، بالعربية والإنجليزية."))
+    st.write(L("What makes it different: it explains WHY (atom-level maps), suggests better molecules for a goal (Optimizer), compares molecules visually, and teaches with a quiz.",
+               "ما يميّزه: يشرح لماذا (خرائط على مستوى الذرات)، ويقترح جزيئات أفضل لهدف محدد (المحسّن)، ويقارن الجزيئات بصرياً، ويعلّم بتحدٍ تفاعلي."))
     st.write(t["about"]); st.success(t["acc"]); st.caption(t["disc"])
