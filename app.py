@@ -75,6 +75,46 @@ def analyze(smi, passes=30):
 
 tab1, tab2, tab3, tab4 = st.tabs([t["tab_single"], t["tab_batch"], t["tab_plans"], t["tab_about"]])
 
+def render(r, key):
+    R, ts = r["rules"], r["tasks"]
+    c0, c1 = st.columns([1, 2])
+    c0.image(Draw.MolToImage(Chem.MolFromSmiles(r["smiles"]), size=(300, 240)))
+    m1, m2 = c1.columns(2)
+    m1.metric(t["conf"], f"{r['confidence']}%", help=t["conf_help"])
+    m2.metric("QED", f"{R['qed']:.2f}", help=t["qed"])
+    c1.code(r["smiles"])
+    st.subheader(t["props"])
+    st.table(pd.DataFrame({"MW": [round(R["mw"], 2)], "LogP": [round(R["logp"], 2)], "TPSA": [round(R["tpsa"], 1)],
+                           "HBD": [R["hbd"]], "HBA": [R["hba"]], "RotB": [R["rot"]], "Rings": [R["rings"]], "Heavy atoms": [R["heavy"]]}))
+    st.subheader(t["rules"])
+    st.write(f"Lipinski: {R['lipinski_viol']} | Veber: {R['veber_viol']} | Ghose: {R['ghose_viol']} {t['viol']}")
+    st.write(f"**{t['alerts']}:** " + (", ".join(r["alerts"]) if r["alerts"] else t["none"]))
+    st.subheader(t["ai"])
+    st.write(f"**{t['logs']}:** {ts['LogS']['value']:.2f} ± {ts['LogS']['uncertainty']:.2f}")
+    b = ts["BBB"]
+    st.write(f"**{t['bbb']}:** {t['yes'] if b['prob'] > .5 else t['no']} ({b['prob']*100:.0f}% ± {b['uncertainty']*100:.0f})")
+    st.markdown(f"**{t['tox']}**")
+    st.dataframe(pd.DataFrame({"assay": config.TOX21_TASKS,
+                               "prob %": [round(ts[k]["prob"] * 100) for k in config.TOX21_TASKS],
+                               "± %": [round(ts[k]["uncertainty"] * 100) for k in config.TOX21_TASKS]}), hide_index=True)
+    st.bar_chart(pd.Series({k: ts[k]["prob"] for k in config.TOX21_TASKS}))
+    st.write(("**" + t["risk"] + ":** " + ", ".join(r["tox_flags"])) if r["tox_flags"] else t["risk0"])
+    st.download_button(t["dl_json"], json.dumps(r, ensure_ascii=False, indent=2), f"molsolveai_{key}.json",
+                       "application/json", key=f"dl_{key}")
+
+
+def flat(r):
+    R, ts = r["rules"], r["tasks"]
+    row = {"smiles": r["smiles"], "confidence": r["confidence"], "QED": round(R["qed"], 3), "MW": round(R["mw"], 2),
+           "LogP": round(R["logp"], 2), "TPSA": round(R["tpsa"], 1), "HBD": R["hbd"], "HBA": R["hba"], "RotB": R["rot"],
+           "Rings": R["rings"], "Lipinski_viol": R["lipinski_viol"], "Veber_viol": R["veber_viol"], "Ghose_viol": R["ghose_viol"],
+           "alerts": "; ".join(r["alerts"]), "LogS": round(ts["LogS"]["value"], 2), "LogS_unc": round(ts["LogS"]["uncertainty"], 2),
+           "BBB_prob": round(ts["BBB"]["prob"], 3), "tox_flags": ";".join(r["tox_flags"]), "tox_flag_count": len(r["tox_flags"])}
+    for k in config.TOX21_TASKS:
+        row[k] = round(ts[k]["prob"], 3)
+    return row
+
+
 with tab1:
     choice = st.selectbox(t["examples"], [t["own"]] + list(EXAMPLES))
     smi = st.text_input(t["smiles"], EXAMPLES.get(choice, EXAMPLES["Aspirin"]))
@@ -87,27 +127,7 @@ with tab1:
                 st.error(t["bad"])
             else:
                 st.session_state.used += 1
-                R = r["rules"]
-                st.image(Draw.MolToImage(Chem.MolFromSmiles(r["smiles"]), size=(380, 300)))
-                c1, c2, c3 = st.columns(3)
-                c1.metric(t["conf"], f"{r['confidence']}%", help=t["conf_help"])
-                c2.metric("QED", f"{R['qed']:.2f}", help=t["qed"])
-                c3.metric("Lipinski", f"{R['lipinski_viol']} {t['viol']}")
-                st.subheader(t["props"])
-                st.table(pd.DataFrame({"MW": [round(R["mw"], 2)], "LogP": [round(R["logp"], 2)], "TPSA": [round(R["tpsa"], 1)],
-                                       "HBD": [R["hbd"]], "HBA": [R["hba"]], "RotB": [R["rot"]], "Rings": [R["rings"]]}))
-                st.subheader(t["rules"])
-                st.write(f"Lipinski: {R['lipinski_viol']} | Veber: {R['veber_viol']} | Ghose: {R['ghose_viol']} {t['viol']}")
-                st.write(f"**{t['alerts']}:** " + (", ".join(r["alerts"]) if r["alerts"] else t["none"]))
-                st.subheader(t["ai"])
-                ts = r["tasks"]
-                st.write(f"**{t['logs']}:** {ts['LogS']['value']:.2f} ± {ts['LogS']['uncertainty']:.2f}")
-                b = ts["BBB"]
-                st.write(f"**{t['bbb']}:** {t['yes'] if b['prob'] > .5 else t['no']} ({b['prob']*100:.0f}% ± {b['uncertainty']*100:.0f})")
-                st.markdown(f"**{t['tox']}**")
-                st.bar_chart(pd.Series({k: ts[k]["prob"] for k in config.TOX21_TASKS}))
-                st.write(("**" + t["risk"] + ":** " + ", ".join(r["tox_flags"])) if r["tox_flags"] else t["risk0"])
-                st.download_button(t["dl_json"], json.dumps(r, ensure_ascii=False, indent=2), "molsolveai_report.json", "application/json")
+                render(r, "single")
                 st.warning(t["disc"])
 
 with tab2:
@@ -121,31 +141,41 @@ with tab2:
             col = next((c for c in df.columns if c.lower() == "smiles"), None)
             if col is None:
                 st.error(t["batch_help"]); st.stop()
-            smiles = [str(s) for s in df[col].dropna()]
-        smiles += [s.strip() for s in pasted.splitlines() if s.strip()]
+            smiles = [str(x) for x in df[col].dropna()]
+        smiles += [x.strip() for x in pasted.splitlines() if x.strip()]
         cap = plan["batch"]
         if len(smiles) > cap:
             st.info(t["batch_cap"].format(n=cap)); smiles = smiles[:cap]
-        rows, bad = [], 0
+        res, bad = [], []
         prog = st.progress(0.0)
-        for i, s in enumerate(smiles):
-            r = analyze(s, passes=10)
-            if r is None:
-                bad += 1
-            else:
-                R, ts = r["rules"], r["tasks"]
-                rows.append({"smiles": r["smiles"], "MW": round(R["mw"], 2), "LogP": round(R["logp"], 2), "TPSA": round(R["tpsa"], 1),
-                             "QED": round(R["qed"], 3), "Lipinski_viol": R["lipinski_viol"], "alerts": len(r["alerts"]),
-                             "LogS": round(ts["LogS"]["value"], 2), "BBB_prob": round(ts["BBB"]["prob"], 3),
-                             "tox_flags": ";".join(r["tox_flags"]), "confidence": r["confidence"]})
+        for i, x in enumerate(smiles):
+            r = analyze(x)
+            (bad.append(x) if r is None else res.append(r))
             prog.progress((i + 1) / max(1, len(smiles)))
-        if rows:
-            out = pd.DataFrame(rows)
-            st.write(f"{t['rows']}: {len(rows)} | {t['skipped']}: {bad}")
-            st.dataframe(out)
-            st.download_button(t["dl_csv"], out.to_csv(index=False), "molsolveai_batch.csv", "text/csv")
-        elif smiles:
-            st.error(t["bad"])
+        st.session_state.batch = {"res": res, "bad": bad}
+    B = st.session_state.get("batch")
+    if B and B["res"]:
+        res = B["res"]
+        st.subheader(t["summary"])
+        k1, k2, k3, k4 = st.columns(4)
+        k1.metric(t["rows"], len(res)); k2.metric(t["n_dl"], sum(r["rules"]["lipinski_viol"] == 0 for r in res))
+        k3.metric(t["n_alert"], sum(bool(r["alerts"]) for r in res)); k4.metric(t["n_tox"], sum(bool(r["tox_flags"]) for r in res))
+        best = max(res, key=lambda r: r["rules"]["qed"])
+        st.write(f"{t['best']}: `{best['smiles']}` (QED {best['rules']['qed']:.2f})")
+        sort_by = st.selectbox(t["sort"], ["QED", "confidence", "LogS", "BBB_prob", "tox_flag_count"])
+        table = pd.DataFrame([flat(r) for r in res]).sort_values(sort_by, ascending=(sort_by == "tox_flag_count")).reset_index(drop=True)
+        st.dataframe(table)
+        st.download_button(t["dl_csv"], table.to_csv(index=False), "molsolveai_batch.csv", "text/csv", key="dl_batch_csv")
+        st.download_button(t["dl_full"], json.dumps(res, ensure_ascii=False, indent=2), "molsolveai_batch_full.json",
+                           "application/json", key="dl_batch_json")
+        st.subheader(t["detail"])
+        for i, r in enumerate(res):
+            with st.expander(f"{i+1}. {r['smiles']}  |  QED {r['rules']['qed']:.2f}  |  {t['conf']} {r['confidence']}%"):
+                render(r, f"b{i}")
+    if B and B["bad"]:
+        st.warning(t["skipped"] + ": " + ", ".join(B["bad"][:20]))
+    elif B is not None and not B["res"]:
+        st.error(t["bad"])
 
 with tab3:
     st.subheader(t["plans_head"])

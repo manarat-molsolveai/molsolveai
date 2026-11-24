@@ -18,6 +18,8 @@ T = {
   "disc": "For research and education only. Predictions are estimates and are not suitable for medical, drug or safety decisions. Consult a specialist and run lab tests.",
   "acc": "Accuracy on a held-out scaffold split (new chemical families): LogS R² 0.71, BBB AUC 0.96, Tox21 mean AUC 0.77.",
   "about": "MolSolveAI uses a graph neural network on atoms and bonds plus fingerprints, trained on public datasets (ESOL, BBBP, Tox21). Exact properties come from RDKit. Uncertainty is estimated from repeated stochastic passes.",
+  "summary": "Batch summary", "n_dl": "Lipinski-clean", "n_alert": "With alerts", "n_tox": "With tox flags", "best": "Best QED", "sort": "Sort by",
+  "detail": "Full report per molecule (click to open)", "dl_full": "Download full report (JSON)",
   "limits": "Limits", "feature": "Feature", "price": "Price",
  },
  "ar": {
@@ -39,6 +41,8 @@ T = {
   "disc": "للبحث والتعلم فقط. التنبؤات تقديرية ولا تصلح لقرار علاجي أو دوائي أو لسلامة الاستخدام. راجع مختصاً وتجارب مخبرية.",
   "acc": "الدقة على تقسيم بالسقالة لم يرَ النموذج عائلاتها: LogS R² 0.71، BBB AUC 0.96، متوسط Tox21 AUC 0.77.",
   "about": "يستخدم MolSolveAI شبكة عصبية رسومية على الذرات والروابط مع البصمات الجزيئية، ودُرّب على بيانات عامة (ESOL وBBBP وTox21). الخصائص الدقيقة من RDKit، وعدم اليقين من تشغيلات عشوائية متكررة.",
+  "summary": "ملخص الدفعة", "n_dl": "مطابق لـ Lipinski", "n_alert": "فيه تنبيهات", "n_tox": "فيه مؤشرات سمّية", "best": "أفضل QED", "sort": "ترتيب حسب",
+  "detail": "تقرير كامل لكل جزيء (اضغط للفتح)", "dl_full": "تنزيل التقرير الكامل (JSON)",
   "limits": "الحدود", "feature": "الميزة", "price": "السعر",
  },
 }
