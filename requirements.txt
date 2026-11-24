@@ -1,0 +1,4 @@
+rdkit
+numpy
+streamlit
+python-dotenv
