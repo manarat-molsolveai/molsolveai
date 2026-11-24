@@ -96,7 +96,7 @@ def render(r, key):
     st.markdown(f"**{t['tox']}**")
     st.dataframe(pd.DataFrame({"assay": config.TOX21_TASKS,
                                "prob %": [round(ts[k]["prob"] * 100) for k in config.TOX21_TASKS],
-                               "± %": [round(ts[k]["uncertainty"] * 100) for k in config.TOX21_TASKS]}), hide_index=True)
+                               "± %": [round(ts[k]["uncertainty"] * 100) for k in config.TOX21_TASKS]}), hide_index=True, height=460)
     st.bar_chart(pd.Series({k: ts[k]["prob"] for k in config.TOX21_TASKS}))
     st.write(("**" + t["risk"] + ":** " + ", ".join(r["tox_flags"])) if r["tox_flags"] else t["risk0"])
     st.download_button(t["dl_json"], json.dumps(r, ensure_ascii=False, indent=2), f"molsolveai_{key}.json",
