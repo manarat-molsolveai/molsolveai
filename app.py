@@ -245,6 +245,12 @@ with tab2:
         if len(smiles) > cap:
             st.info(t["batch_cap"].format(n=cap)); smiles = smiles[:cap]
         aud = v7.audit(smiles)
+        seen_c, uniq = set(), []
+        for x in smiles:
+            c_ = canonical(x)
+            if c_ is None or c_ not in seen_c:
+                seen_c.add(c_); uniq.append(x)
+        smiles = uniq
         res, bad = [], []
         prog = st.progress(0.0)
         for i, x in enumerate(smiles):
@@ -256,7 +262,7 @@ with tab2:
             prog.progress((i + 1) / max(1, len(smiles)))
         st.session_state.batch = {"res": res, "bad": bad, "audit": aud}
     B = st.session_state.get("batch")
-    if B and B.get("audit"):
+    if B and B.get("audit") and B["audit"]["total"] > 0:
         st.subheader(L("🧪 Data audit (before predictions)", "🧪 تدقيق البيانات (قبل التنبؤ)"))
         st.dataframe(pd.DataFrame(v7.audit_rows(B["audit"], lang == "ar")), hide_index=True)
     if B and B["res"]:
@@ -266,7 +272,7 @@ with tab2:
         u1, u2, u3 = st.columns(3)
         u1.metric(L("Predictions below 'trust'", "تنبؤات دون «أثق به»"), f"{ur['below_trust_pct']}%")
         u2.metric(L("Mean stability", "متوسط الثبات"), f"{ur['mean_stability']}%")
-        u3.metric(L("Inside / edge / outside domain", "داخل / حافة / خارج النطاق"), f"{ur['domain']['in']} / {ur['domain']['edge']} / {ur['domain']['out']}")
+        u3.metric(L("Inside / edge / outside domain", "داخل / حافة / خارج النطاق"), L(f"in {ur['domain']['in']} · edge {ur['domain']['edge']} · out {ur['domain']['out']}", f"داخل {ur['domain']['in']} · حافة {ur['domain']['edge']} · خارج {ur['domain']['out']}"))
         st.dataframe(pd.DataFrame(ur["rows"]), hide_index=True)
         st.caption(L("A calibration curve needs held-out predictions that are not stored with the model, so it is not shown. We do not invent one.", "منحنى المعايرة يحتاج تنبؤات على بيانات اختبار غير محفوظة مع النموذج، لذلك لا نعرضه ولا نختلق واحداً."))
         st.info(v7.SCOPE[lang])
@@ -321,7 +327,7 @@ with tab_cmp:
         st.subheader(L("Ranking with reasons", "الترتيب مع المبررات"))
         for i_, x in enumerate(v7.rank_candidates(C, model, lang), 1):
             st.markdown(f"**{i_}. {x['name']}**")
-            st.write(L("Strengths: ", "نقاط القوة: ") + (", ".join(x["good"]) or "-"))
+            st.write(L("Strengths: ", "نقاط القوة: ") + (L(", ", "، ").join(x["good"]) or "-"))
             st.write(L("Limits: ", "القيود: ") + ("; ".join(x["bad"]) or "-"))
         st.caption(v7.RULE[lang])
         tbl = pd.DataFrame([{"name": n, **{k: v for k, v in flat(r).items() if k != "smiles"}} for n, r in C]).set_index("name").T.astype(str)
