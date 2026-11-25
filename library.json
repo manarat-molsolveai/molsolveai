@@ -1,0 +1,4570 @@
+{
+ "generated": "2026-11-25",
+ "source": "PubChem",
+ "entries": [
+  {
+   "name": "Aspirin",
+   "smiles": "CC(=O)Oc1ccccc1C(=O)O",
+   "cid": 2244,
+   "inchikey": "BSYNRYMUTXBXSQ-UHFFFAOYSA-N",
+   "formula": "C9H8O4",
+   "pubchem_title": "Aspirin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Paracetamol",
+   "smiles": "CC(=O)Nc1ccc(O)cc1",
+   "cid": 1983,
+   "inchikey": "RZVAJINKPMORJF-UHFFFAOYSA-N",
+   "formula": "C8H9NO2",
+   "pubchem_title": "Acetaminophen",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": "known synonym (reviewed by the assistant, not by a chemist)"
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Ibuprofen",
+   "smiles": "CC(C)Cc1ccc(C(C)C(=O)O)cc1",
+   "cid": 3672,
+   "inchikey": "HEFNNWSXXWATRW-UHFFFAOYSA-N",
+   "formula": "C13H18O2",
+   "pubchem_title": "Ibuprofen, (+-)-",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Naproxen",
+   "smiles": "COc1ccc2cc(C(C)C(=O)O)ccc2c1",
+   "cid": 156391,
+   "inchikey": "CMWTZPSULFXXJA-VIFPVBQESA-N",
+   "formula": "C14H14O3",
+   "pubchem_title": "Naproxen",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Diclofenac",
+   "smiles": "O=C(O)Cc1ccccc1Nc1c(Cl)cccc1Cl",
+   "cid": 3033,
+   "inchikey": "DCOPUUMXTXDBNB-UHFFFAOYSA-N",
+   "formula": "C14H11Cl2NO2",
+   "pubchem_title": "Diclofenac",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Caffeine",
+   "smiles": "Cn1c(=O)c2c(ncn2C)n(C)c1=O",
+   "cid": 2519,
+   "inchikey": "RYYVLZVUVIJVGH-UHFFFAOYSA-N",
+   "formula": "C8H10N4O2",
+   "pubchem_title": "Caffeine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Theophylline",
+   "smiles": "Cn1c(=O)c2[nH]cnc2n(C)c1=O",
+   "cid": 2153,
+   "inchikey": "ZFXYFBGIUFBOJW-UHFFFAOYSA-N",
+   "formula": "C7H8N4O2",
+   "pubchem_title": "Theophylline",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Nicotine",
+   "smiles": "CN1CCCC1c1cccnc1",
+   "cid": 89594,
+   "inchikey": "SNICXCGAKADSCV-JTQLQIEISA-N",
+   "formula": "C10H14N2",
+   "pubchem_title": "Nicotine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Diazepam",
+   "smiles": "CN1C(=O)CN=C(c2ccccc2)c2cc(Cl)ccc21",
+   "cid": 3016,
+   "inchikey": "AAOVKJBEBIDNHE-UHFFFAOYSA-N",
+   "formula": "C16H13ClN2O",
+   "pubchem_title": "Diazepam",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Morphine",
+   "smiles": "CN1CCC23c4c5ccc(O)c4OC2C(O)C=CC3C1C5",
+   "cid": 5288826,
+   "inchikey": "BQJCRHHNABKAKU-KBQPJGBKSA-N",
+   "formula": "C17H19NO3",
+   "pubchem_title": "Morphine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Codeine",
+   "smiles": "COc1ccc2c3c1OC1C(O)C=CC4C(C2)N(C)CCC341",
+   "cid": 5284371,
+   "inchikey": "OROGSEYTTFOCAN-DNJOTXNNSA-N",
+   "formula": "C18H21NO3",
+   "pubchem_title": "Codeine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Penicillin G",
+   "smiles": "CC1(C)SC2C(NC(=O)Cc3ccccc3)C(=O)N2C1C(=O)O",
+   "cid": 5904,
+   "inchikey": "JGSARLDLIJGVTE-MBNYWOFBSA-N",
+   "formula": "C16H18N2O4S",
+   "pubchem_title": "Penicillin G",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Amoxicillin",
+   "smiles": "CC1(C)SC2C(NC(=O)C(N)c3ccc(O)cc3)C(=O)N2C1C(=O)O",
+   "cid": 33613,
+   "inchikey": "LSQZJLSUYDQPKJ-NJBDSQKTSA-N",
+   "formula": "C16H19N3O5S",
+   "pubchem_title": "Amoxicillin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Metformin",
+   "smiles": "CN(C)C(=N)N=C(N)N",
+   "cid": 4091,
+   "inchikey": "XZWYZXLIPXDOLR-UHFFFAOYSA-N",
+   "formula": "C4H11N5",
+   "pubchem_title": "Metformin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Atenolol",
+   "smiles": "CC(C)NCC(O)COc1ccc(CC(N)=O)cc1",
+   "cid": 2249,
+   "inchikey": "METKIMKYRPQLGS-UHFFFAOYSA-N",
+   "formula": "C14H22N2O3",
+   "pubchem_title": "Atenolol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Propranolol",
+   "smiles": "CC(C)NCC(O)COc1cccc2ccccc12",
+   "cid": 4946,
+   "inchikey": "AQHHHDLHHXJYJD-UHFFFAOYSA-N",
+   "formula": "C16H21NO2",
+   "pubchem_title": "Propranolol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Lidocaine",
+   "smiles": "CCN(CC)CC(=O)Nc1c(C)cccc1C",
+   "cid": 3676,
+   "inchikey": "NNJVILVZKWQKPM-UHFFFAOYSA-N",
+   "formula": "C14H22N2O",
+   "pubchem_title": "Lidocaine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Fluoxetine",
+   "smiles": "CNCCC(Oc1ccc(C(F)(F)F)cc1)c1ccccc1",
+   "cid": 3386,
+   "inchikey": "RTHCYVBBDHJXIQ-UHFFFAOYSA-N",
+   "formula": "C17H18F3NO",
+   "pubchem_title": "Fluoxetine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Sertraline",
+   "smiles": "CNC1CCC(c2ccc(Cl)c(Cl)c2)c2ccccc21",
+   "cid": 68617,
+   "inchikey": "VGKDLMBJGBXTGI-SJCJKPOMSA-N",
+   "formula": "C17H17Cl2N",
+   "pubchem_title": "Sertraline",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Omeprazole",
+   "smiles": "COc1ccc2nc(S(=O)Cc3ncc(C)c(OC)c3C)[nH]c2c1",
+   "cid": 4594,
+   "inchikey": "SUBDBMMJDZJVOS-UHFFFAOYSA-N",
+   "formula": "C17H19N3O3S",
+   "pubchem_title": "Omeprazole",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Ranitidine",
+   "smiles": "CNC(=C[N+](=O)[O-])NCCSCc1ccc(CN(C)C)o1",
+   "cid": 3001055,
+   "inchikey": "VMXUWOKSQNHOCA-UKTHLTGXSA-N",
+   "formula": "C13H22N4O3S",
+   "pubchem_title": "Ranitidine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Warfarin",
+   "smiles": "CC(=O)CC(c1ccccc1)c1c(O)c2ccccc2oc1=O",
+   "cid": 54678486,
+   "inchikey": "PJVWKTKQMONHTI-UHFFFAOYSA-N",
+   "formula": "C19H16O4",
+   "pubchem_title": "Warfarin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Chloramphenicol",
+   "smiles": "O=C(NC(CO)C(O)c1ccc([N+](=O)[O-])cc1)C(Cl)Cl",
+   "cid": 5959,
+   "inchikey": "WIIZWVCIJKGZOK-RKDXNWHRSA-N",
+   "formula": "C11H12Cl2N2O5",
+   "pubchem_title": "Chloramphenicol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Ciprofloxacin",
+   "smiles": "O=C(O)c1cn(C2CC2)c2cc(N3CCNCC3)c(F)cc2c1=O",
+   "cid": 2764,
+   "inchikey": "MYSWGUAQZAJSOK-UHFFFAOYSA-N",
+   "formula": "C17H18FN3O3",
+   "pubchem_title": "Ciprofloxacin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Sildenafil",
+   "smiles": "CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(C)CC4)ccc3OCC)nc12",
+   "cid": 135398744,
+   "inchikey": "BNRNXUUZRGQAQC-UHFFFAOYSA-N",
+   "formula": "C22H30N6O4S",
+   "pubchem_title": "Sildenafil",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Atorvastatin",
+   "smiles": "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CCC(O)CC(O)CC(=O)O",
+   "cid": 60823,
+   "inchikey": "XUKUURHRXDUEBC-KAYWLYCHSA-N",
+   "formula": "C33H35FN2O5",
+   "pubchem_title": "Atorvastatin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Simvastatin",
+   "smiles": "CCC(C)(C)C(=O)OC1CC(C)C=C2C=CC(C)C(CCC3CC(O)CC(=O)O3)C21",
+   "cid": 54454,
+   "inchikey": "RYMZZMVNJRMUDD-HGQWONQESA-N",
+   "formula": "C25H38O5",
+   "pubchem_title": "Simvastatin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Cholesterol",
+   "smiles": "CC(C)CCCC(C)C1CCC2C3CC=C4CC(O)CCC4(C)C3CCC12C",
+   "cid": 5997,
+   "inchikey": "HVYWMOMLDIMFJA-DPAQBDIFSA-N",
+   "formula": "C27H46O",
+   "pubchem_title": "Cholesterol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Glucose",
+   "smiles": "OCC1OC(O)C(O)C(O)C1O",
+   "cid": 5793,
+   "inchikey": "WQZGKKKJIJFFOK-GASJEMHNSA-N",
+   "formula": "C6H12O6",
+   "pubchem_title": "D-Glucose",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Ethanol",
+   "smiles": "CCO",
+   "cid": 702,
+   "inchikey": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
+   "formula": "C2H6O",
+   "pubchem_title": "Ethanol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Dopamine",
+   "smiles": "NCCc1ccc(O)c(O)c1",
+   "cid": 681,
+   "inchikey": "VYFYYTLLBUKUHU-UHFFFAOYSA-N",
+   "formula": "C8H11NO2",
+   "pubchem_title": "Dopamine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Serotonin",
+   "smiles": "NCCc1c[nH]c2ccc(O)cc12",
+   "cid": 5202,
+   "inchikey": "QZAYGJVTTNCVMB-UHFFFAOYSA-N",
+   "formula": "C10H12N2O",
+   "pubchem_title": "Serotonin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Testosterone",
+   "smiles": "CC12CCC(=O)C=C1CCC1C2CCC2(C)C(O)CCC12",
+   "cid": 6013,
+   "inchikey": "MUMGGOZAMZWBJJ-DYKIIFRCSA-N",
+   "formula": "C19H28O2",
+   "pubchem_title": "Testosterone",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Estradiol",
+   "smiles": "CC12CCC3c4ccc(O)cc4CCC3C1CCC2O",
+   "cid": 5757,
+   "inchikey": "VOXZDWNPVJITMN-ZBRFXRBCSA-N",
+   "formula": "C18H24O2",
+   "pubchem_title": "Estradiol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Hydrocortisone",
+   "smiles": "CC12CCC(=O)C=C1CCC1C2C(O)CC2(C)C1CCC2(O)C(=O)CO",
+   "cid": 5754,
+   "inchikey": "JYGXADMDTFJGBT-VWUMJDOOSA-N",
+   "formula": "C21H30O5",
+   "pubchem_title": "Cortisol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": "known synonym (reviewed by the assistant, not by a chemist)"
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Loratadine",
+   "smiles": "CCOC(=O)N1CCC(=C2c3ccc(Cl)cc3CCc3cccnc32)CC1",
+   "cid": 3957,
+   "inchikey": "JCCNYMKQOSZNPW-UHFFFAOYSA-N",
+   "formula": "C22H23ClN2O2",
+   "pubchem_title": "Loratadine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Cetirizine",
+   "smiles": "O=C(O)COCCN1CCN(C(c2ccccc2)c2ccc(Cl)cc2)CC1",
+   "cid": 2678,
+   "inchikey": "ZKLPARSLTMPFCP-UHFFFAOYSA-N",
+   "formula": "C21H25ClN2O3",
+   "pubchem_title": "Cetirizine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Salbutamol",
+   "smiles": "CC(C)(C)NCC(O)c1ccc(O)c(CO)c1",
+   "cid": 2083,
+   "inchikey": "NDAUXUAQIAJITI-UHFFFAOYSA-N",
+   "formula": "C13H21NO3",
+   "pubchem_title": "Salbutamol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Acyclovir",
+   "smiles": "Nc1nc2c(ncn2COCCO)c(=O)[nH]1",
+   "cid": 135398513,
+   "inchikey": "MKUXAQIIEYXACX-UHFFFAOYSA-N",
+   "formula": "C8H11N5O3",
+   "pubchem_title": "Acyclovir",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Tamoxifen",
+   "smiles": "CCC(=C(c1ccccc1)c1ccc(OCCN(C)C)cc1)c1ccccc1",
+   "cid": 2733526,
+   "inchikey": "NKANXQFJJICGDU-QPLCGJKRSA-N",
+   "formula": "C26H29NO",
+   "pubchem_title": "Tamoxifen",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Celecoxib",
+   "smiles": "Cc1ccc(-c2cc(C(F)(F)F)nn2-c2ccc(S(N)(=O)=O)cc2)cc1",
+   "cid": 2662,
+   "inchikey": "RZEKVGVHFLEQIL-UHFFFAOYSA-N",
+   "formula": "C17H14F3N3O2S",
+   "pubchem_title": "Celecoxib",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Indomethacin",
+   "smiles": "COc1ccc2c(c1)c(CC(=O)O)c(C)n2C(=O)c1ccc(Cl)cc1",
+   "cid": 3715,
+   "inchikey": "CGIGDMFJXJATDK-UHFFFAOYSA-N",
+   "formula": "C19H16ClNO4",
+   "pubchem_title": "Indomethacin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Ketoprofen",
+   "smiles": "CC(C(=O)O)c1cccc(C(=O)c2ccccc2)c1",
+   "cid": 3825,
+   "inchikey": "DKYWVDODHFEZIM-UHFFFAOYSA-N",
+   "formula": "C16H14O3",
+   "pubchem_title": "Ketoprofen",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Piroxicam",
+   "smiles": "CN1C(C(=O)Nc2ccccn2)=C(O)c2ccccc2S1(=O)=O",
+   "cid": 54676228,
+   "inchikey": "QYSPLQLAKJAUJT-UHFFFAOYSA-N",
+   "formula": "C15H13N3O4S",
+   "pubchem_title": "Piroxicam",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Meloxicam",
+   "smiles": "Cc1cnc(NC(=O)C2=C(O)c3ccccc3S(=O)(=O)N2C)s1",
+   "cid": 54677470,
+   "inchikey": "ZRVUJXDFFKFLMG-UHFFFAOYSA-N",
+   "formula": "C14H13N3O4S2",
+   "pubchem_title": "Meloxicam",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Tramadol",
+   "smiles": "COc1cccc(C2(O)CCCCC2CN(C)C)c1",
+   "cid": 33741,
+   "inchikey": "TVYLLZQTGLZFBW-ZBFHGGJFSA-N",
+   "formula": "C16H25NO2",
+   "pubchem_title": "Tramadol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Fentanyl",
+   "smiles": "CCC(=O)N(c1ccccc1)C1CCN(CCc2ccccc2)CC1",
+   "cid": 3345,
+   "inchikey": "PJMPHNIQZUBGLI-UHFFFAOYSA-N",
+   "formula": "C22H28N2O",
+   "pubchem_title": "Fentanyl",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Oxycodone",
+   "smiles": "COc1ccc2c3c1OC1C(=O)CCC4(O)C(C2)N(C)CCC314",
+   "cid": 5284603,
+   "inchikey": "BRUQQQPBMZOVGD-XFKAJCMBSA-N",
+   "formula": "C18H21NO4",
+   "pubchem_title": "Oxycodone",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Methadone",
+   "smiles": "CCC(=O)C(CC(C)N(C)C)(c1ccccc1)c1ccccc1",
+   "cid": 4095,
+   "inchikey": "USSIQXCVUWKGNF-UHFFFAOYSA-N",
+   "formula": "C21H27NO",
+   "pubchem_title": "Methadone",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Naloxone",
+   "smiles": "C=CCN1CCC23c4c5ccc(O)c4OC2C(=O)CCC3(O)C1C5",
+   "cid": 5284596,
+   "inchikey": "UZHSEJADLWPNLE-GRGSLBFTSA-N",
+   "formula": "C19H21NO4",
+   "pubchem_title": "Naloxone",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Naltrexone",
+   "smiles": "O=C1CCC2(O)C3Cc4ccc(O)c5c4C2(CCN3CC2CC2)C1O5",
+   "cid": 5360515,
+   "inchikey": "DQCKKXVULJGBQN-XFWGSAIBSA-N",
+   "formula": "C20H23NO4",
+   "pubchem_title": "Naltrexone",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Buprenorphine",
+   "smiles": "COC12CCC3(CC1C(C)(O)C(C)(C)C)C1Cc4ccc(O)c5c4C3(CCN1CC1CC1)C2O5",
+   "cid": 644073,
+   "inchikey": "RMRJXGBAOAMLHD-IHFGGWKQSA-N",
+   "formula": "C29H41NO4",
+   "pubchem_title": "Buprenorphine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Alprazolam",
+   "smiles": "Cc1nnc2n1-c1ccc(Cl)cc1C(c1ccccc1)=NC2",
+   "cid": 2118,
+   "inchikey": "VREFGVBLTWBCJP-UHFFFAOYSA-N",
+   "formula": "C17H13ClN4",
+   "pubchem_title": "Alprazolam",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Lorazepam",
+   "smiles": "O=C1Nc2ccc(Cl)cc2C(c2ccccc2Cl)=NC1O",
+   "cid": 3958,
+   "inchikey": "DIWRORZWFLOCLC-UHFFFAOYSA-N",
+   "formula": "C15H10Cl2N2O2",
+   "pubchem_title": "Lorazepam",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Clonazepam",
+   "smiles": "O=C1CN=C(c2ccccc2Cl)c2cc([N+](=O)[O-])ccc2N1",
+   "cid": 2802,
+   "inchikey": "DGBIGWXXNGSACT-UHFFFAOYSA-N",
+   "formula": "C15H10ClN3O3",
+   "pubchem_title": "Clonazepam",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Zolpidem",
+   "smiles": "Cc1ccc(-c2nc3ccc(C)cn3c2CC(=O)N(C)C)cc1",
+   "cid": 5732,
+   "inchikey": "ZAFYATHCZYHLPB-UHFFFAOYSA-N",
+   "formula": "C19H21N3O",
+   "pubchem_title": "Zolpidem",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Phenobarbital",
+   "smiles": "CCC1(c2ccccc2)C(=O)NC(=O)NC1=O",
+   "cid": 4763,
+   "inchikey": "DDBREPKUVSBGFI-UHFFFAOYSA-N",
+   "formula": "C12H12N2O3",
+   "pubchem_title": "Phenobarbital",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Carbamazepine",
+   "smiles": "NC(=O)N1c2ccccc2C=Cc2ccccc21",
+   "cid": 2554,
+   "inchikey": "FFGPTBGBLSHEPO-UHFFFAOYSA-N",
+   "formula": "C15H12N2O",
+   "pubchem_title": "Carbamazepine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Phenytoin",
+   "smiles": "O=C1NC(=O)C(c2ccccc2)(c2ccccc2)N1",
+   "cid": 1775,
+   "inchikey": "CXOFVDLJLONNDW-UHFFFAOYSA-N",
+   "formula": "C15H12N2O2",
+   "pubchem_title": "Phenytoin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Valproic acid",
+   "smiles": "CCCC(CCC)C(=O)O",
+   "cid": 3121,
+   "inchikey": "NIJJYAXOARWZEE-UHFFFAOYSA-N",
+   "formula": "C8H16O2",
+   "pubchem_title": "Valproic Acid",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Lamotrigine",
+   "smiles": "Nc1nnc(-c2cccc(Cl)c2Cl)c(N)n1",
+   "cid": 3878,
+   "inchikey": "PYZRQGJRPPTADH-UHFFFAOYSA-N",
+   "formula": "C9H7Cl2N5",
+   "pubchem_title": "Lamotrigine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Levetiracetam",
+   "smiles": "CCC(C(N)=O)N1CCCC1=O",
+   "cid": 5284583,
+   "inchikey": "HPHUVLMMVZITSG-LURJTMIESA-N",
+   "formula": "C8H14N2O2",
+   "pubchem_title": "Levetiracetam",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Topiramate",
+   "smiles": "CC1(C)OC2COC3(COS(N)(=O)=O)OC(C)(C)OC3C2O1",
+   "cid": 5284627,
+   "inchikey": "KJADKKWYZYXHBB-XBWDGYHZSA-N",
+   "formula": "C12H21NO8S",
+   "pubchem_title": "Topiramate",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Gabapentin",
+   "smiles": "NCC1(CC(=O)O)CCCCC1",
+   "cid": 3446,
+   "inchikey": "UGJMXCAKCUNAIE-UHFFFAOYSA-N",
+   "formula": "C9H17NO2",
+   "pubchem_title": "Gabapentin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Pregabalin",
+   "smiles": "CC(C)CC(CN)CC(=O)O",
+   "cid": 5486971,
+   "inchikey": "AYXYPKUFHZROOJ-ZETCQYMHSA-N",
+   "formula": "C8H17NO2",
+   "pubchem_title": "Pregabalin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Haloperidol",
+   "smiles": "O=C(CCCN1CCC(O)(c2ccc(Cl)cc2)CC1)c1ccc(F)cc1",
+   "cid": 3559,
+   "inchikey": "LNEPOXFFQSENCJ-UHFFFAOYSA-N",
+   "formula": "C21H23ClFNO2",
+   "pubchem_title": "Haloperidol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Chlorpromazine",
+   "smiles": "CN(C)CCCN1c2ccccc2Sc2ccc(Cl)cc21",
+   "cid": 2726,
+   "inchikey": "ZPEIMTDSQAKGNT-UHFFFAOYSA-N",
+   "formula": "C17H19ClN2S",
+   "pubchem_title": "Chlorpromazine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Olanzapine",
+   "smiles": "Cc1cc2c(s1)Nc1ccccc1N=C2N1CCN(C)CC1",
+   "cid": 135398745,
+   "inchikey": "KVWDHTXUZHCGIO-UHFFFAOYSA-N",
+   "formula": "C17H20N4S",
+   "pubchem_title": "Olanzapine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Risperidone",
+   "smiles": "Cc1nc2n(c(=O)c1CCN1CCC(c3noc4cc(F)ccc34)CC1)CCCC2",
+   "cid": 5073,
+   "inchikey": "RAPZEAPATHNIPO-UHFFFAOYSA-N",
+   "formula": "C23H27FN4O2",
+   "pubchem_title": "Risperidone",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Quetiapine",
+   "smiles": "OCCOCCN1CCN(C2=Nc3ccccc3Sc3ccccc32)CC1",
+   "cid": 5002,
+   "inchikey": "URKOMYMAXPYINW-UHFFFAOYSA-N",
+   "formula": "C21H25N3O2S",
+   "pubchem_title": "Quetiapine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Clozapine",
+   "smiles": "CN1CCN(C2=Nc3cc(Cl)ccc3Nc3ccccc32)CC1",
+   "cid": 135398737,
+   "inchikey": "QZUDBNBUXVUHMW-UHFFFAOYSA-N",
+   "formula": "C18H19ClN4",
+   "pubchem_title": "Clozapine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Aripiprazole",
+   "smiles": "O=C1CCc2ccc(OCCCCN3CCN(c4cccc(Cl)c4Cl)CC3)cc2N1",
+   "cid": 60795,
+   "inchikey": "CEUORZQYGODEFX-UHFFFAOYSA-N",
+   "formula": "C23H27Cl2N3O2",
+   "pubchem_title": "Aripiprazole",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Amitriptyline",
+   "smiles": "CN(C)CCC=C1c2ccccc2CCc2ccccc21",
+   "cid": 2160,
+   "inchikey": "KRMDCWKBEZIMAB-UHFFFAOYSA-N",
+   "formula": "C20H23N",
+   "pubchem_title": "Amitriptyline",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Imipramine",
+   "smiles": "CN(C)CCCN1c2ccccc2CCc2ccccc21",
+   "cid": 3696,
+   "inchikey": "BCGWQEUPMDMJNV-UHFFFAOYSA-N",
+   "formula": "C19H24N2",
+   "pubchem_title": "Imipramine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Citalopram",
+   "smiles": "CN(C)CCCC1(c2ccc(F)cc2)OCc2cc(C#N)ccc21",
+   "cid": 2771,
+   "inchikey": "WSEQXVZVJXJVFP-UHFFFAOYSA-N",
+   "formula": "C20H21FN2O",
+   "pubchem_title": "Citalopram",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Escitalopram",
+   "smiles": "CN(C)CCCC1(c2ccc(F)cc2)OCc2cc(C#N)ccc21",
+   "cid": 146570,
+   "inchikey": "WSEQXVZVJXJVFP-FQEVSTJZSA-N",
+   "formula": "C20H21FN2O",
+   "pubchem_title": "Escitalopram",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Paroxetine",
+   "smiles": "Fc1ccc(C2CCNCC2COc2ccc3c(c2)OCO3)cc1",
+   "cid": 43815,
+   "inchikey": "AHOUBRCZNHFOSL-YOEHRIQHSA-N",
+   "formula": "C19H20FNO3",
+   "pubchem_title": "Paroxetine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Venlafaxine",
+   "smiles": "COc1ccc(C(CN(C)C)C2(O)CCCCC2)cc1",
+   "cid": 5656,
+   "inchikey": "PNVNVHUZROJLTJ-UHFFFAOYSA-N",
+   "formula": "C17H27NO2",
+   "pubchem_title": "Venlafaxine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Bupropion",
+   "smiles": "CC(NC(C)(C)C)C(=O)c1cccc(Cl)c1",
+   "cid": 444,
+   "inchikey": "SNPPWIUOZRMYNY-UHFFFAOYSA-N",
+   "formula": "C13H18ClNO",
+   "pubchem_title": "Bupropion",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Mirtazapine",
+   "smiles": "CN1CCN2c3ncccc3Cc3ccccc3C2C1",
+   "cid": 4205,
+   "inchikey": "RONZAEMNMFQXRA-UHFFFAOYSA-N",
+   "formula": "C17H19N3",
+   "pubchem_title": "Mirtazapine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Trazodone",
+   "smiles": "O=c1n(CCCN2CCN(c3cccc(Cl)c3)CC2)nc2ccccn12",
+   "cid": 5533,
+   "inchikey": "PHLBKPHSAVXXEF-UHFFFAOYSA-N",
+   "formula": "C19H22ClN5O",
+   "pubchem_title": "Trazodone",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Methylphenidate",
+   "smiles": "COC(=O)C(c1ccccc1)C1CCCCN1",
+   "cid": 4158,
+   "inchikey": "DUGOZIWVEXMGBE-UHFFFAOYSA-N",
+   "formula": "C14H19NO2",
+   "pubchem_title": "Methylphenidate",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Amphetamine",
+   "smiles": "CC(N)Cc1ccccc1",
+   "cid": 3007,
+   "inchikey": "KWTSXDURSIMDCE-UHFFFAOYSA-N",
+   "formula": "C9H13N",
+   "pubchem_title": "Amphetamine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Modafinil",
+   "smiles": "NC(=O)CS(=O)C(c1ccccc1)c1ccccc1",
+   "cid": 4236,
+   "inchikey": "YFGHCGITMMYXAQ-UHFFFAOYSA-N",
+   "formula": "C15H15NO2S",
+   "pubchem_title": "Modafinil",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Donepezil",
+   "smiles": "COc1cc2c(cc1OC)C(=O)C(CC1CCN(Cc3ccccc3)CC1)C2",
+   "cid": 3152,
+   "inchikey": "ADEBPBSSDYVVLD-UHFFFAOYSA-N",
+   "formula": "C24H29NO3",
+   "pubchem_title": "Donepezil",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Levodopa",
+   "smiles": "NC(Cc1ccc(O)c(O)c1)C(=O)O",
+   "cid": 6047,
+   "inchikey": "WTDRDQBEARUVNC-LURJTMIESA-N",
+   "formula": "C9H11NO4",
+   "pubchem_title": "Levodopa",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Carbidopa",
+   "smiles": "CC(Cc1ccc(O)c(O)c1)(NN)C(=O)O",
+   "cid": 34359,
+   "inchikey": "TZFNLOMSOLWIDK-JTQLQIEISA-N",
+   "formula": "C10H14N2O4",
+   "pubchem_title": "Carbidopa",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Selegiline",
+   "smiles": "C#CCN(C)C(C)Cc1ccccc1",
+   "cid": 26757,
+   "inchikey": "MEZLKOACVSPNER-GFCCVEGCSA-N",
+   "formula": "C13H17N",
+   "pubchem_title": "Selegiline",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Ropinirole",
+   "smiles": "CCCN(CCC)CCc1cccc2c1CC(=O)N2",
+   "cid": 5095,
+   "inchikey": "UHSKFQJFRQCDBE-UHFFFAOYSA-N",
+   "formula": "C16H24N2O",
+   "pubchem_title": "Ropinirole",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Sumatriptan",
+   "smiles": "CNS(=O)(=O)Cc1ccc2[nH]cc(CCN(C)C)c2c1",
+   "cid": 5358,
+   "inchikey": "KQKPFRSPSRPDEB-UHFFFAOYSA-N",
+   "formula": "C14H21N3O2S",
+   "pubchem_title": "Sumatriptan",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Melatonin",
+   "smiles": "COc1ccc2[nH]cc(CCNC(C)=O)c2c1",
+   "cid": 896,
+   "inchikey": "DRLFMBDRBRZALE-UHFFFAOYSA-N",
+   "formula": "C13H16N2O2",
+   "pubchem_title": "Melatonin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Cimetidine",
+   "smiles": "CN=C(NC#N)NCCSCc1nc[nH]c1C",
+   "cid": 2756,
+   "inchikey": "AQIXAKUUQRKLND-UHFFFAOYSA-N",
+   "formula": "C10H16N6S",
+   "pubchem_title": "Cimetidine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Famotidine",
+   "smiles": "NC(N)=Nc1nc(CSCCC(N)=NS(N)(=O)=O)cs1",
+   "cid": 5702160,
+   "inchikey": "XUFQPHANEAPEMJ-UHFFFAOYSA-N",
+   "formula": "C8H15N7O2S3",
+   "pubchem_title": "Famotidine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Lansoprazole",
+   "smiles": "Cc1c(OCC(F)(F)F)ccnc1CS(=O)c1nc2ccccc2[nH]1",
+   "cid": 3883,
+   "inchikey": "MJIHNNLFOKEZEW-UHFFFAOYSA-N",
+   "formula": "C16H14F3N3O2S",
+   "pubchem_title": "Lansoprazole",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Pantoprazole",
+   "smiles": "COc1ccnc(CS(=O)c2nc3ccc(OC(F)F)cc3[nH]2)c1OC",
+   "cid": 4679,
+   "inchikey": "IQPSEEYGBUAQFF-UHFFFAOYSA-N",
+   "formula": "C16H15F2N3O4S",
+   "pubchem_title": "Pantoprazole",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Ondansetron",
+   "smiles": "Cc1nccn1CC1CCc2c(c3ccccc3n2C)C1=O",
+   "cid": 4595,
+   "inchikey": "FELGMEQIXOGIFQ-UHFFFAOYSA-N",
+   "formula": "C18H19N3O",
+   "pubchem_title": "Ondansetron",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Metoclopramide",
+   "smiles": "CCN(CC)CCNC(=O)c1cc(Cl)c(N)cc1OC",
+   "cid": 4168,
+   "inchikey": "TTWJBBZEZQICBI-UHFFFAOYSA-N",
+   "formula": "C14H22ClN3O2",
+   "pubchem_title": "Metoclopramide",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Domperidone",
+   "smiles": "O=c1[nH]c2ccccc2n1CCCN1CCC(n2c(=O)[nH]c3cc(Cl)ccc32)CC1",
+   "cid": 3151,
+   "inchikey": "FGXWKSZFVQUSTL-UHFFFAOYSA-N",
+   "formula": "C22H24ClN5O2",
+   "pubchem_title": "Domperidone",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Loperamide",
+   "smiles": "CN(C)C(=O)C(CCN1CCC(O)(c2ccc(Cl)cc2)CC1)(c1ccccc1)c1ccccc1",
+   "cid": 3955,
+   "inchikey": "RDOIQAHITMMDAJ-UHFFFAOYSA-N",
+   "formula": "C29H33ClN2O2",
+   "pubchem_title": "Loperamide",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Bisacodyl",
+   "smiles": "CC(=O)Oc1ccc(C(c2ccc(OC(C)=O)cc2)c2ccccn2)cc1",
+   "cid": 2391,
+   "inchikey": "KHOITXIGCFIULA-UHFFFAOYSA-N",
+   "formula": "C22H19NO4",
+   "pubchem_title": "Bisacodyl",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Lisinopril",
+   "smiles": "NCCCCC(NC(CCc1ccccc1)C(=O)O)C(=O)N1CCCC1C(=O)O",
+   "cid": 5362119,
+   "inchikey": "RLAWWYSOJDYHDC-BZSNNMDCSA-N",
+   "formula": "C21H31N3O5",
+   "pubchem_title": "Lisinopril",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Enalapril",
+   "smiles": "CCOC(=O)C(CCc1ccccc1)NC(C)C(=O)N1CCCC1C(=O)O",
+   "cid": 5388962,
+   "inchikey": "GBXSMTUPTTWBMN-XIRDDKMYSA-N",
+   "formula": "C20H28N2O5",
+   "pubchem_title": "Enalapril",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Captopril",
+   "smiles": "CC(CS)C(=O)N1CCCC1C(=O)O",
+   "cid": 44093,
+   "inchikey": "FAKRSMQSSFJEIM-RQJHMYQMSA-N",
+   "formula": "C9H15NO3S",
+   "pubchem_title": "Captopril",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Losartan",
+   "smiles": "CCCCc1nc(Cl)c(CO)n1Cc1ccc(-c2ccccc2-c2nn[nH]n2)cc1",
+   "cid": 3961,
+   "inchikey": "PSIFNNKUMBGKDQ-UHFFFAOYSA-N",
+   "formula": "C22H23ClN6O",
+   "pubchem_title": "Losartan",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Valsartan",
+   "smiles": "CCCCC(=O)N(Cc1ccc(-c2ccccc2-c2nn[nH]n2)cc1)C(C(=O)O)C(C)C",
+   "cid": 60846,
+   "inchikey": "ACWBQPMHZXGDFX-QFIPXVFZSA-N",
+   "formula": "C24H29N5O3",
+   "pubchem_title": "Valsartan",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Amlodipine",
+   "smiles": "CCOC(=O)C1=C(COCCN)NC(C)=C(C(=O)OC)C1c1ccccc1Cl",
+   "cid": 2162,
+   "inchikey": "HTIQEAQVCYTUBX-UHFFFAOYSA-N",
+   "formula": "C20H25ClN2O5",
+   "pubchem_title": "Amlodipine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Nifedipine",
+   "smiles": "COC(=O)C1=C(C)NC(C)=C(C(=O)OC)C1c1ccccc1[N+](=O)[O-]",
+   "cid": 4485,
+   "inchikey": "HYIMSNHJOBLJNT-UHFFFAOYSA-N",
+   "formula": "C17H18N2O6",
+   "pubchem_title": "Nifedipine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Verapamil",
+   "smiles": "COc1ccc(CCN(C)CCCC(C#N)(c2ccc(OC)c(OC)c2)C(C)C)cc1OC",
+   "cid": 2520,
+   "inchikey": "SGTNSNPWRIOYBX-UHFFFAOYSA-N",
+   "formula": "C27H38N2O4",
+   "pubchem_title": "Verapamil",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Diltiazem",
+   "smiles": "COc1ccc(C2Sc3ccccc3N(CCN(C)C)C(=O)C2OC(C)=O)cc1",
+   "cid": 39186,
+   "inchikey": "HSUGRBWQSSZJOP-RTWAWAEBSA-N",
+   "formula": "C22H26N2O4S",
+   "pubchem_title": "Diltiazem",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Metoprolol",
+   "smiles": "COCCc1ccc(OCC(O)CNC(C)C)cc1",
+   "cid": 4171,
+   "inchikey": "IUBSYMUCCVWXPE-UHFFFAOYSA-N",
+   "formula": "C15H25NO3",
+   "pubchem_title": "Metoprolol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Bisoprolol",
+   "smiles": "CC(C)NCC(O)COc1ccc(COCCOC(C)C)cc1",
+   "cid": 2405,
+   "inchikey": "VHYCDWMUTMEGQY-UHFFFAOYSA-N",
+   "formula": "C18H31NO4",
+   "pubchem_title": "Bisoprolol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Carvedilol",
+   "smiles": "COc1ccccc1OCCNCC(O)COc1cccc2[nH]c3ccccc3c12",
+   "cid": 2585,
+   "inchikey": "OGHNVEJMJSYVRP-UHFFFAOYSA-N",
+   "formula": "C24H26N2O4",
+   "pubchem_title": "Carvedilol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Hydrochlorothiazide",
+   "smiles": "NS(=O)(=O)c1cc2c(cc1Cl)NCNS2(=O)=O",
+   "cid": 3639,
+   "inchikey": "JZUFKLXOESDKRF-UHFFFAOYSA-N",
+   "formula": "C7H8ClN3O4S2",
+   "pubchem_title": "Hydrochlorothiazide",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Furosemide",
+   "smiles": "NS(=O)(=O)c1cc(C(=O)O)c(NCc2ccco2)cc1Cl",
+   "cid": 3440,
+   "inchikey": "ZZUFCTLCJUWOSV-UHFFFAOYSA-N",
+   "formula": "C12H11ClN2O5S",
+   "pubchem_title": "Furosemide",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Spironolactone",
+   "smiles": "CC(=O)SC1CC2=CC(=O)CCC2(C)C2CCC3(C)C(CCC34CCC(=O)O4)C12",
+   "cid": 5833,
+   "inchikey": "LXMSZDCAJNLERA-ZHYRCANASA-N",
+   "formula": "C24H32O4S",
+   "pubchem_title": "Spironolactone",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Digoxin",
+   "smiles": "CC1OC(OC2C(O)CC(OC3C(O)CC(OC4CCC5(C)C(CCC6C5CC(O)C5(C)C(C7=CC(=O)OC7)CCC65O)C4)OC3C)OC2C)CC(O)C1O",
+   "cid": 2724385,
+   "inchikey": "LTMHDMANZUZIPE-PUGKRICDSA-N",
+   "formula": "C41H64O14",
+   "pubchem_title": "Digoxin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Amiodarone",
+   "smiles": "CCCCc1oc2ccccc2c1C(=O)c1cc(I)c(OCCN(CC)CC)c(I)c1",
+   "cid": 2157,
+   "inchikey": "IYIKLHRQXLHMJQ-UHFFFAOYSA-N",
+   "formula": "C25H29I2NO3",
+   "pubchem_title": "Amiodarone",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Clopidogrel",
+   "smiles": "COC(=O)C(c1ccccc1Cl)N1CCc2sccc2C1",
+   "cid": 60606,
+   "inchikey": "GKTWGGQPFAXNFI-HNNXBMFYSA-N",
+   "formula": "C16H16ClNO2S",
+   "pubchem_title": "Clopidogrel",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Rivaroxaban",
+   "smiles": "O=C(NCC1CN(c2ccc(N3CCOCC3=O)cc2)C(=O)O1)c1ccc(Cl)s1",
+   "cid": 9875401,
+   "inchikey": "KGFYHTZWPPHNLQ-AWEZNQCLSA-N",
+   "formula": "C19H18ClN3O5S",
+   "pubchem_title": "Rivaroxaban",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Apixaban",
+   "smiles": "COc1ccc(-n2nc(C(N)=O)c3c2C(=O)N(c2ccc(N4CCCCC4=O)cc2)CC3)cc1",
+   "cid": 10182969,
+   "inchikey": "QNZCBYKSOIHPEH-UHFFFAOYSA-N",
+   "formula": "C25H25N5O4",
+   "pubchem_title": "Apixaban",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Nitroglycerin",
+   "smiles": "O=[N+]([O-])OCC(CO[N+](=O)[O-])O[N+](=O)[O-]",
+   "cid": 4510,
+   "inchikey": "SNIOPGDIGTZGOP-UHFFFAOYSA-N",
+   "formula": "C3H5N3O9",
+   "pubchem_title": "Nitroglycerin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Rosuvastatin",
+   "smiles": "CC(C)c1nc(N(C)S(C)(=O)=O)nc(-c2ccc(F)cc2)c1C=CC(O)CC(O)CC(=O)O",
+   "cid": 446157,
+   "inchikey": "BPRHUIZQVSMCRT-VEUZHWNKSA-N",
+   "formula": "C22H28FN3O6S",
+   "pubchem_title": "Rosuvastatin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Pravastatin",
+   "smiles": "CCC(C)C(=O)OC1CC(O)C=C2C=CC(C)C(CCC(O)CC(O)CC(=O)O)C21",
+   "cid": 54687,
+   "inchikey": "TUZYXOIXSAXUGO-PZAWKZKUSA-N",
+   "formula": "C23H36O7",
+   "pubchem_title": "Pravastatin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Ezetimibe",
+   "smiles": "O=C1C(CCC(O)c2ccc(F)cc2)C(c2ccc(O)cc2)N1c1ccc(F)cc1",
+   "cid": 150311,
+   "inchikey": "OLNTVTPDXPETLC-XPWALMASSA-N",
+   "formula": "C24H21F2NO3",
+   "pubchem_title": "Ezetimibe",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Fenofibrate",
+   "smiles": "CC(C)OC(=O)C(C)(C)Oc1ccc(C(=O)c2ccc(Cl)cc2)cc1",
+   "cid": 3339,
+   "inchikey": "YMTINGFKWWXKFG-UHFFFAOYSA-N",
+   "formula": "C20H21ClO4",
+   "pubchem_title": "Fenofibrate",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Gemfibrozil",
+   "smiles": "Cc1ccc(C)c(OCCCC(C)(C)C(=O)O)c1",
+   "cid": 3463,
+   "inchikey": "HEMJJKBWTPKOJG-UHFFFAOYSA-N",
+   "formula": "C15H22O3",
+   "pubchem_title": "Gemfibrozil",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Glibenclamide",
+   "smiles": "COc1ccc(Cl)cc1C(=O)NCCc1ccc(S(=O)(=O)NC(=O)NC2CCCCC2)cc1",
+   "cid": 3488,
+   "inchikey": "ZNNLBTZKUZBEKO-UHFFFAOYSA-N",
+   "formula": "C23H28ClN3O5S",
+   "pubchem_title": "Glibenclamide",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Pioglitazone",
+   "smiles": "CCc1ccc(CCOc2ccc(CC3SC(=O)NC3=O)cc2)nc1",
+   "cid": 4829,
+   "inchikey": "HYAFETHFCAUJAY-UHFFFAOYSA-N",
+   "formula": "C19H20N2O3S",
+   "pubchem_title": "Pioglitazone",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Sitagliptin",
+   "smiles": "NC(CC(=O)N1CCn2c(nnc2C(F)(F)F)C1)Cc1cc(F)c(F)cc1F",
+   "cid": 4369359,
+   "inchikey": "MFFMDFFZMYYVKS-SECBINFHSA-N",
+   "formula": "C16H15F6N5O",
+   "pubchem_title": "Sitagliptin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Empagliflozin",
+   "smiles": "OCC1OC(c2ccc(Cl)c(Cc3ccc(OC4CCOC4)cc3)c2)C(O)C(O)C1O",
+   "cid": 11949646,
+   "inchikey": "OBWASQILIWPZMG-QZMOQZSNSA-N",
+   "formula": "C23H27ClO7",
+   "pubchem_title": "Empagliflozin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Levothyroxine",
+   "smiles": "NC(Cc1cc(I)c(Oc2cc(I)c(O)c(I)c2)c(I)c1)C(=O)O",
+   "cid": 5819,
+   "inchikey": "XUIIKFGFIJCVMT-LBPRGKRZSA-N",
+   "formula": "C15H11I4NO4",
+   "pubchem_title": "Thyroxine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Methimazole",
+   "smiles": "Cn1cc[nH]c1=S",
+   "cid": 1349907,
+   "inchikey": "PMRYVIKBURPHAH-UHFFFAOYSA-N",
+   "formula": "C4H6N2S",
+   "pubchem_title": "Methimazole",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Prednisone",
+   "smiles": "CC12C=CC(=O)C=C1CCC1C2C(=O)CC2(C)C1CCC2(O)C(=O)CO",
+   "cid": 5865,
+   "inchikey": "XOFYZVNMUHMLCC-ZPOLXVRWSA-N",
+   "formula": "C21H26O5",
+   "pubchem_title": "Prednisone",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Prednisolone",
+   "smiles": "CC12C=CC(=O)C=C1CCC1C2C(O)CC2(C)C1CCC2(O)C(=O)CO",
+   "cid": 5755,
+   "inchikey": "OIGNJSKKLXVSLS-VWUMJDOOSA-N",
+   "formula": "C21H28O5",
+   "pubchem_title": "Prednisolone",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Dexamethasone",
+   "smiles": "CC1CC2C3CCC4=CC(=O)C=CC4(C)C3(F)C(O)CC2(C)C1(O)C(=O)CO",
+   "cid": 5743,
+   "inchikey": "UREBDLICKHMUKA-CXSFZGCWSA-N",
+   "formula": "C22H29FO5",
+   "pubchem_title": "Dexamethasone",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Betamethasone",
+   "smiles": "CC1CC2C3CCC4=CC(=O)C=CC4(C)C3(F)C(O)CC2(C)C1(O)C(=O)CO",
+   "cid": 9782,
+   "inchikey": "UREBDLICKHMUKA-DVTGEIKXSA-N",
+   "formula": "C22H29FO5",
+   "pubchem_title": "Betamethasone",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Progesterone",
+   "smiles": "CC(=O)C1CCC2C3CCC4=CC(=O)CCC4(C)C3CCC12C",
+   "cid": 5994,
+   "inchikey": "RJKFOVLPORLFTN-LEKSSAKUSA-N",
+   "formula": "C21H30O2",
+   "pubchem_title": "Progesterone",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Levonorgestrel",
+   "smiles": "C#CC1(O)CCC2C3CCC4=CC(=O)CCC4C3CCC21CC",
+   "cid": 13109,
+   "inchikey": "WWYNJERNGUHSAO-XUDSTZEESA-N",
+   "formula": "C21H28O2",
+   "pubchem_title": "Levonorgestrel",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Ethinylestradiol",
+   "smiles": "C#CC1(O)CCC2C3CCc4cc(O)ccc4C3CCC21C",
+   "cid": 5991,
+   "inchikey": "BFPYWIDHMRZLRN-SLHNCBLASA-N",
+   "formula": "C20H24O2",
+   "pubchem_title": "Ethinylestradiol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Finasteride",
+   "smiles": "CC(C)(C)NC(=O)C1CCC2C3CCC4NC(=O)C=CC4(C)C3CCC12C",
+   "cid": 57363,
+   "inchikey": "DBEPLOCGEIEOCV-WSBQPABSSA-N",
+   "formula": "C23H36N2O2",
+   "pubchem_title": "Finasteride",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Tadalafil",
+   "smiles": "CN1CC(=O)N2C(Cc3c([nH]c4ccccc34)C2c2ccc3c(c2)OCO3)C1=O",
+   "cid": 110635,
+   "inchikey": "WOXKDUGGOYFFRN-IIBYNOLFSA-N",
+   "formula": "C22H19N3O4",
+   "pubchem_title": "Tadalafil",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Vardenafil",
+   "smiles": "CCCc1nc(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(CC)CC4)ccc3OCC)nn12",
+   "cid": 135400189,
+   "inchikey": "SECKRCOLJRRGGV-UHFFFAOYSA-N",
+   "formula": "C23H32N6O4S",
+   "pubchem_title": "Vardenafil",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Cephalexin",
+   "smiles": "CC1=C(C(=O)O)N2C(=O)C(NC(=O)C(N)c3ccccc3)C2SC1",
+   "cid": 27447,
+   "inchikey": "ZAIPMKNFIOOWCQ-UEKVPHQBSA-N",
+   "formula": "C16H17N3O4S",
+   "pubchem_title": "Cephalexin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Cefuroxime",
+   "smiles": "CON=C(C(=O)NC1C(=O)N2C(C(=O)O)=C(COC(N)=O)CSC12)c1ccco1",
+   "cid": 5479529,
+   "inchikey": "JFPVXVDWJQMJEE-IZRZKJBUSA-N",
+   "formula": "C16H16N4O8S",
+   "pubchem_title": "Cefuroxime",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Ceftriaxone",
+   "smiles": "CON=C(C(=O)NC1C(=O)N2C(C(=O)O)=C(CSc3nc(=O)c(=O)[nH]n3C)CSC12)c1csc(N)n1",
+   "cid": 5479530,
+   "inchikey": "VAAUVRVFOQPIGI-SPQHTLEESA-N",
+   "formula": "C18H18N8O7S3",
+   "pubchem_title": "Ceftriaxone",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Azithromycin",
+   "smiles": "CCC1OC(=O)C(C)C(OC2CC(C)(OC)C(O)C(C)O2)C(C)C(OC2OC(C)CC(N(C)C)C2O)C(C)(O)CC(C)CN(C)C(C)C(O)C1(C)O",
+   "cid": 447043,
+   "inchikey": "MQTOSJVFKKJCRP-BICOPXKESA-N",
+   "formula": "C38H72N2O12",
+   "pubchem_title": "Azithromycin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Erythromycin",
+   "smiles": "CCC1OC(=O)C(C)C(OC2CC(C)(OC)C(O)C(C)O2)C(C)C(OC2OC(C)CC(N(C)C)C2O)C(C)(O)CC(C)C(=O)C(C)C(O)C1(C)O",
+   "cid": 12560,
+   "inchikey": "ULGZDMOVFRHVEP-RWJQBGPGSA-N",
+   "formula": "C37H67NO13",
+   "pubchem_title": "Erythromycin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Clarithromycin",
+   "smiles": "CCC1OC(=O)C(C)C(OC2CC(C)(OC)C(O)C(C)O2)C(C)C(OC2OC(C)CC(N(C)C)C2O)C(C)(OC)CC(C)C(=O)C(C)C(O)C1(C)O",
+   "cid": 84029,
+   "inchikey": "AGOYDEPGAOXOCK-KCBOHYOISA-N",
+   "formula": "C38H69NO13",
+   "pubchem_title": "Clarithromycin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Tetracycline",
+   "smiles": "CN(C)C1C(=O)C(C(N)=O)=C(O)C2(O)C(=O)C3=C(O)c4c(O)cccc4C(C)(O)C3CC12",
+   "cid": 54675776,
+   "inchikey": "NWXMGUDVXFXRIG-WESIUVDSSA-N",
+   "formula": "C22H24N2O8",
+   "pubchem_title": "Tetracycline",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Gentamicin",
+   "smiles": "CNC(C)C1CCC(N)C(OC2C(N)CC(N)C(OC3OCC(C)(O)C(NC)C3O)C2O)O1",
+   "cid": 3467,
+   "inchikey": "CEAZRRDELHUEMR-UHFFFAOYSA-N",
+   "formula": "C21H43N5O7",
+   "pubchem_title": "Gentamicin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Levofloxacin",
+   "smiles": "CC1COc2c(N3CCN(C)CC3)c(F)cc3c(=O)c(C(=O)O)cn1c23",
+   "cid": 149096,
+   "inchikey": "GSDSWSVVBLHKDQ-JTQLQIEISA-N",
+   "formula": "C18H20FN3O4",
+   "pubchem_title": "Levofloxacin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Moxifloxacin",
+   "smiles": "COc1c(N2CC3CCCNC3C2)c(F)cc2c(=O)c(C(=O)O)cn(C3CC3)c12",
+   "cid": 152946,
+   "inchikey": "FABPRXSRWADJSP-MEDUHNTESA-N",
+   "formula": "C21H24FN3O4",
+   "pubchem_title": "Moxifloxacin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Sulfamethoxazole",
+   "smiles": "Cc1cc(NS(=O)(=O)c2ccc(N)cc2)no1",
+   "cid": 5329,
+   "inchikey": "JLKIGFTWXXRPMT-UHFFFAOYSA-N",
+   "formula": "C10H11N3O3S",
+   "pubchem_title": "Sulfamethoxazole",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Trimethoprim",
+   "smiles": "COc1cc(Cc2cnc(N)nc2N)cc(OC)c1OC",
+   "cid": 5578,
+   "inchikey": "IEDVJHCEMCRBQM-UHFFFAOYSA-N",
+   "formula": "C14H18N4O3",
+   "pubchem_title": "Trimethoprim",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Metronidazole",
+   "smiles": "Cc1ncc([N+](=O)[O-])n1CCO",
+   "cid": 4173,
+   "inchikey": "VAOCPAMSLUNLGC-UHFFFAOYSA-N",
+   "formula": "C6H9N3O3",
+   "pubchem_title": "Metronidazole",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Nitrofurantoin",
+   "smiles": "O=C1CN(N=Cc2ccc([N+](=O)[O-])o2)C(=O)N1",
+   "cid": 6604200,
+   "inchikey": "NXFQHRVNIOXGAQ-YCRREMRBSA-N",
+   "formula": "C8H6N4O5",
+   "pubchem_title": "Nitrofurantoin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Vancomycin",
+   "smiles": "CNC(CC(C)C)C(=O)NC1C(=O)NC(CC(N)=O)C(=O)NC2C(=O)NC3C(=O)NC(C(=O)NC(C(=O)O)c4cc(O)cc(O)c4-c4cc3ccc4O)C(O)c3ccc(c(Cl)c3)Oc3cc2cc(c3OC2OC(CO)C(O)C(O)C2OC2CC(C)(N)C(O)C(C)O2)Oc2ccc(cc2Cl)C1O",
+   "cid": 14969,
+   "inchikey": "MYPYJXKWCTUITO-LYRMYLQWSA-N",
+   "formula": "C66H75Cl2N9O24",
+   "pubchem_title": "Vancomycin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Linezolid",
+   "smiles": "CC(=O)NCC1CN(c2ccc(N3CCOCC3)c(F)c2)C(=O)O1",
+   "cid": 441401,
+   "inchikey": "TYZROVQLWOKYKF-ZDUSSCGKSA-N",
+   "formula": "C16H20FN3O4",
+   "pubchem_title": "Linezolid",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Clindamycin",
+   "smiles": "CCCC1CC(C(=O)NC(C(C)Cl)C2OC(SC)C(O)C(O)C2O)N(C)C1",
+   "cid": 446598,
+   "inchikey": "KDLRVYVGXIQJDK-AWPVFWJPSA-N",
+   "formula": "C18H33ClN2O5S",
+   "pubchem_title": "Clindamycin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Rifampicin",
+   "smiles": "COC1C=COC2(C)Oc3c(C)c(O)c4c(O)c(c(C=NN5CCN(C)CC5)c(O)c4c3C2=O)NC(=O)C(C)=CC=CC(C)C(O)C(C)C(O)C(C)C(OC(C)=O)C1C",
+   "cid": 135398735,
+   "inchikey": "JQXXHWHPUNPDRT-WLSIYKJHSA-N",
+   "formula": "C43H58N4O12",
+   "pubchem_title": "Rifampicin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Isoniazid",
+   "smiles": "NNC(=O)c1ccncc1",
+   "cid": 3767,
+   "inchikey": "QRXWMOHMRWLFEY-UHFFFAOYSA-N",
+   "formula": "C6H7N3O",
+   "pubchem_title": "Isoniazid",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Ethambutol",
+   "smiles": "CCC(CO)NCCNC(CC)CO",
+   "cid": 14052,
+   "inchikey": "AEUTYOVWOVBAKS-UWVGGRQHSA-N",
+   "formula": "C10H24N2O2",
+   "pubchem_title": "Ethambutol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Pyrazinamide",
+   "smiles": "NC(=O)c1cnccn1",
+   "cid": 1046,
+   "inchikey": "IPEHBUMCGVEMRF-UHFFFAOYSA-N",
+   "formula": "C5H5N3O",
+   "pubchem_title": "Pyrazinamide",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Fluconazole",
+   "smiles": "OC(Cn1cncn1)(Cn1cncn1)c1ccc(F)cc1F",
+   "cid": 3365,
+   "inchikey": "RFHAOTPXVQNOHP-UHFFFAOYSA-N",
+   "formula": "C13H12F2N6O",
+   "pubchem_title": "Fluconazole",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Ketoconazole",
+   "smiles": "CC(=O)N1CCN(c2ccc(OCC3COC(Cn4ccnc4)(c4ccc(Cl)cc4Cl)O3)cc2)CC1",
+   "cid": 47576,
+   "inchikey": "XMAYWYJOQHXEEK-ZEQKJWHPSA-N",
+   "formula": "C26H28Cl2N4O4",
+   "pubchem_title": "Ketoconazole",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Terbinafine",
+   "smiles": "CN(CC=CC#CC(C)(C)C)Cc1cccc2ccccc12",
+   "cid": 1549008,
+   "inchikey": "DOMXUEMWDBAQBQ-WEVVVXLNSA-N",
+   "formula": "C21H25N",
+   "pubchem_title": "Terbinafine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Amphotericin B",
+   "smiles": "CC1C=CC=CC=CC=CC=CC=CC=CC(OC2OC(C)C(O)C(N)C2O)CC2OC(O)(CC(O)CC(O)C(O)CCC(O)CC(O)CC(=O)OC(C)C(C)C1O)CC(O)C2C(=O)O",
+   "cid": 5280965,
+   "inchikey": "APKFDSVGJQXUKY-INPOYWNPSA-N",
+   "formula": "C47H73NO17",
+   "pubchem_title": "Amphotericin B",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Oseltamivir",
+   "smiles": "CCOC(=O)C1=CC(OC(CC)CC)C(NC(C)=O)C(N)C1",
+   "cid": 65028,
+   "inchikey": "VSZGPKBBMSAYNT-RRFJBIMHSA-N",
+   "formula": "C16H28N2O4",
+   "pubchem_title": "Oseltamivir",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Zidovudine",
+   "smiles": "Cc1cn(C2CC(N=[N+]=[N-])C(CO)O2)c(=O)[nH]c1=O",
+   "cid": 35370,
+   "inchikey": "HBOMLICNUCNMMY-XLPZGREQSA-N",
+   "formula": "C10H13N5O4",
+   "pubchem_title": "Zidovudine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Ribavirin",
+   "smiles": "NC(=O)c1ncn(C2OC(CO)C(O)C2O)n1",
+   "cid": 37542,
+   "inchikey": "IWUCXVSUMQZMFG-AFCXAGJDSA-N",
+   "formula": "C8H12N4O5",
+   "pubchem_title": "Ribavirin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Tenofovir",
+   "smiles": "CC(Cn1cnc2c(N)ncnc21)OCP(=O)(O)O",
+   "cid": 464205,
+   "inchikey": "SGOIRFVFHAKUTI-ZCFIWIBFSA-N",
+   "formula": "C9H14N5O4P",
+   "pubchem_title": "Tenofovir",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Chloroquine",
+   "smiles": "CCN(CC)CCCC(C)Nc1ccnc2cc(Cl)ccc12",
+   "cid": 2719,
+   "inchikey": "WHTVZRBIWZFKQO-UHFFFAOYSA-N",
+   "formula": "C18H26ClN3",
+   "pubchem_title": "Chloroquine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Hydroxychloroquine",
+   "smiles": "CCN(CCO)CCCC(C)Nc1ccnc2cc(Cl)ccc12",
+   "cid": 3652,
+   "inchikey": "XXSMGPRMXLTPCZ-UHFFFAOYSA-N",
+   "formula": "C18H26ClN3O",
+   "pubchem_title": "Hydroxychloroquine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Artemisinin",
+   "smiles": "CC1CCC2C(C)C(=O)OC3OC4(C)CCC1C32OO4",
+   "cid": 68827,
+   "inchikey": "BLUAFEHZUWYNDE-NNWCWBAJSA-N",
+   "formula": "C15H22O5",
+   "pubchem_title": "Artemisinin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Quinine",
+   "smiles": "C=CC1CN2CCC1CC2C(O)c1ccnc2ccc(OC)cc12",
+   "cid": 3034034,
+   "inchikey": "LOUPRKONTZGTKE-WZBLMQSHSA-N",
+   "formula": "C20H24N2O2",
+   "pubchem_title": "Quinine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Primaquine",
+   "smiles": "COc1cc(NC(C)CCCN)c2ncccc2c1",
+   "cid": 4908,
+   "inchikey": "INDBQLZJXZLFIT-UHFFFAOYSA-N",
+   "formula": "C15H21N3O",
+   "pubchem_title": "Primaquine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Albendazole",
+   "smiles": "CCCSc1ccc2nc(NC(=O)OC)[nH]c2c1",
+   "cid": 2082,
+   "inchikey": "HXHWSAZORRCQMX-UHFFFAOYSA-N",
+   "formula": "C12H15N3O2S",
+   "pubchem_title": "Albendazole",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Mebendazole",
+   "smiles": "COC(=O)Nc1nc2ccc(C(=O)c3ccccc3)cc2[nH]1",
+   "cid": 4030,
+   "inchikey": "OPXLLQIJSORQAM-UHFFFAOYSA-N",
+   "formula": "C16H13N3O3",
+   "pubchem_title": "Mebendazole",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Praziquantel",
+   "smiles": "O=C(C1CCCCC1)N1CC(=O)N2CCc3ccccc3C2C1",
+   "cid": 4891,
+   "inchikey": "FSVJFNAIGNNGKK-UHFFFAOYSA-N",
+   "formula": "C19H24N2O2",
+   "pubchem_title": "Praziquantel",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Methotrexate",
+   "smiles": "CN(Cc1cnc2nc(N)nc(N)c2n1)c1ccc(C(=O)NC(CCC(=O)O)C(=O)O)cc1",
+   "cid": 126941,
+   "inchikey": "FBOZXECLQNJBKD-ZDUSSCGKSA-N",
+   "formula": "C20H22N8O5",
+   "pubchem_title": "Methotrexate",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Cyclophosphamide",
+   "smiles": "O=P1(N(CCCl)CCCl)NCCCO1",
+   "cid": 2907,
+   "inchikey": "CMSMOCZEIVJLDB-UHFFFAOYSA-N",
+   "formula": "C7H15Cl2N2O2P",
+   "pubchem_title": "Cyclophosphamide",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Doxorubicin",
+   "smiles": "COc1cccc2c1C(=O)c1c(O)c3c(c(O)c1C2=O)CC(O)(C(=O)CO)CC3OC1CC(N)C(O)C(C)O1",
+   "cid": 31703,
+   "inchikey": "AOJJSUZBOXZQNB-TZSSRYMLSA-N",
+   "formula": "C27H29NO11",
+   "pubchem_title": "Doxorubicin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Paclitaxel",
+   "smiles": "CC(=O)OC1C(=O)C2(C)C(O)CC3OCC3(OC(C)=O)C2C(OC(=O)c2ccccc2)C2(O)CC(OC(=O)C(O)C(NC(=O)c3ccccc3)c3ccccc3)C(C)=C1C2(C)C",
+   "cid": 36314,
+   "inchikey": "RCINICONZNJXQF-MZXODVADSA-N",
+   "formula": "C47H51NO14",
+   "pubchem_title": "Paclitaxel",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Fluorouracil",
+   "smiles": "O=c1[nH]cc(F)c(=O)[nH]1",
+   "cid": 3385,
+   "inchikey": "GHASVSINZRGABV-UHFFFAOYSA-N",
+   "formula": "C4H3FN2O2",
+   "pubchem_title": "5-Fluorouracil",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Imatinib",
+   "smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cccnc2)n1",
+   "cid": 5291,
+   "inchikey": "KTUFNOKKBVMGRW-UHFFFAOYSA-N",
+   "formula": "C29H31N7O",
+   "pubchem_title": "Imatinib",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Gefitinib",
+   "smiles": "COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1OCCCN1CCOCC1",
+   "cid": 123631,
+   "inchikey": "XGALLCVXEZPNRQ-UHFFFAOYSA-N",
+   "formula": "C22H24ClFN4O3",
+   "pubchem_title": "Gefitinib",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Erlotinib",
+   "smiles": "C#Cc1cccc(Nc2ncnc3cc(OCCOC)c(OCCOC)cc23)c1",
+   "cid": 176870,
+   "inchikey": "AAKJLRGGTJKAMG-UHFFFAOYSA-N",
+   "formula": "C22H23N3O4",
+   "pubchem_title": "Erlotinib",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Capecitabine",
+   "smiles": "CCCCCOC(=O)Nc1nc(=O)n(C2OC(C)C(O)C2O)cc1F",
+   "cid": 60953,
+   "inchikey": "GAGWJHPBXLXJQN-UORFTKCHSA-N",
+   "formula": "C15H22FN3O6",
+   "pubchem_title": "Capecitabine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Azathioprine",
+   "smiles": "Cn1cnc([N+](=O)[O-])c1Sc1ncnc2nc[nH]c12",
+   "cid": 2265,
+   "inchikey": "LMEKQMALGUDUQG-UHFFFAOYSA-N",
+   "formula": "C9H7N7O2S",
+   "pubchem_title": "Azathioprine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Cyclosporine",
+   "smiles": "CC=CCC(C)C(O)C1C(=O)NC(CC)C(=O)N(C)CC(=O)N(C)C(CC(C)C)C(=O)NC(C(C)C)C(=O)N(C)C(CC(C)C)C(=O)NC(C)C(=O)NC(C)C(=O)N(C)C(CC(C)C)C(=O)N(C)C(CC(C)C)C(=O)N(C)C(C(C)C)C(=O)N1C",
+   "cid": 5284373,
+   "inchikey": "PMATZTZNYRCHOR-CGLBZJNRSA-N",
+   "formula": "C62H111N11O12",
+   "pubchem_title": "Cyclosporin A",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": "known synonym (reviewed by the assistant, not by a chemist)"
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Tacrolimus",
+   "smiles": "C=CCC1C=C(C)CC(C)CC(OC)C2OC(O)(C(=O)C(=O)N3CCCCC3C(=O)OC(C(C)=CC3CCC(O)C(OC)C3)C(C)C(O)CC1=O)C(C)CC2OC",
+   "cid": 445643,
+   "inchikey": "QJJXYPPXXYFBGM-LFZNUXCKSA-N",
+   "formula": "C44H69NO12",
+   "pubchem_title": "Tacrolimus",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Allopurinol",
+   "smiles": "O=c1[nH]cnc2[nH]ncc12",
+   "cid": 135401907,
+   "inchikey": "OFCNXPDARWKPPY-UHFFFAOYSA-N",
+   "formula": "C5H4N4O",
+   "pubchem_title": "Allopurinol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Colchicine",
+   "smiles": "COc1cc2c(c(OC)c1OC)-c1ccc(OC)c(=O)cc1C(NC(C)=O)CC2",
+   "cid": 6167,
+   "inchikey": "IAKHMKGGTNLKSZ-INIZCTEOSA-N",
+   "formula": "C22H25NO6",
+   "pubchem_title": "Colchicine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Alendronic acid",
+   "smiles": "NCCCC(O)(P(=O)(O)O)P(=O)(O)O",
+   "cid": 2088,
+   "inchikey": "OGSPWJRAVKPPFI-UHFFFAOYSA-N",
+   "formula": "C4H13NO7P2",
+   "pubchem_title": "Alendronic Acid",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Montelukast",
+   "smiles": "CC(C)(O)c1ccccc1CCC(SCC1(CC(=O)O)CC1)c1cccc(C=Cc2ccc3ccc(Cl)cc3n2)c1",
+   "cid": 5281040,
+   "inchikey": "UCHDWCPVSPXUMX-TZIWLTJVSA-N",
+   "formula": "C35H36ClNO3S",
+   "pubchem_title": "Montelukast",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Fexofenadine",
+   "smiles": "CC(C)(C(=O)O)c1ccc(C(O)CCCN2CCC(C(O)(c3ccccc3)c3ccccc3)CC2)cc1",
+   "cid": 3348,
+   "inchikey": "RWTNPBWLLIMQHL-UHFFFAOYSA-N",
+   "formula": "C32H39NO4",
+   "pubchem_title": "Fexofenadine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Diphenhydramine",
+   "smiles": "CN(C)CCOC(c1ccccc1)c1ccccc1",
+   "cid": 3100,
+   "inchikey": "ZZVUWRFHKOJYTH-UHFFFAOYSA-N",
+   "formula": "C17H21NO",
+   "pubchem_title": "Diphenhydramine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Chlorpheniramine",
+   "smiles": "CN(C)CCC(c1ccc(Cl)cc1)c1ccccn1",
+   "cid": 2725,
+   "inchikey": "SOYKEARSMXGVTM-UHFFFAOYSA-N",
+   "formula": "C16H19ClN2",
+   "pubchem_title": "(+-)-Chlorpheniramine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Pseudoephedrine",
+   "smiles": "CNC(C)C(O)c1ccccc1",
+   "cid": 7028,
+   "inchikey": "KWGRBVOPPLSCSI-WCBMZHEXSA-N",
+   "formula": "C10H15NO",
+   "pubchem_title": "Pseudoephedrine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Ephedrine",
+   "smiles": "CNC(C)C(O)c1ccccc1",
+   "cid": 9294,
+   "inchikey": "KWGRBVOPPLSCSI-WPRPVWTQSA-N",
+   "formula": "C10H15NO",
+   "pubchem_title": "Ephedrine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Dextromethorphan",
+   "smiles": "COc1ccc2c(c1)C13CCCCC1C(C2)N(C)CC3",
+   "cid": 5360696,
+   "inchikey": "MKXZASYAUGDDCJ-NJAFHUGGSA-N",
+   "formula": "C18H25NO",
+   "pubchem_title": "Dextromethorphan",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Guaifenesin",
+   "smiles": "COc1ccccc1OCC(O)CO",
+   "cid": 3516,
+   "inchikey": "HSRJKNPTNIJEKV-UHFFFAOYSA-N",
+   "formula": "C10H14O4",
+   "pubchem_title": "Guaifenesin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Theobromine",
+   "smiles": "Cn1cnc2c1c(=O)[nH]c(=O)n2C",
+   "cid": 5429,
+   "inchikey": "YAPQBXQYLJRXSA-UHFFFAOYSA-N",
+   "formula": "C7H8N4O2",
+   "pubchem_title": "Theobromine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Neostigmine",
+   "smiles": "CN(C)C(=O)Oc1cccc([N+](C)(C)C)c1",
+   "cid": 4456,
+   "inchikey": "ALWKGYPQUAPLQC-UHFFFAOYSA-N",
+   "formula": "C12H19N2O2+",
+   "pubchem_title": "Neostigmine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Epinephrine",
+   "smiles": "CNCC(O)c1ccc(O)c(O)c1",
+   "cid": 5816,
+   "inchikey": "UCTWMZQNUQWSLP-VIFPVBQESA-N",
+   "formula": "C9H13NO3",
+   "pubchem_title": "Epinephrine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Norepinephrine",
+   "smiles": "NCC(O)c1ccc(O)c(O)c1",
+   "cid": 439260,
+   "inchikey": "SFLSHLFXELFNJZ-QMMMGPOBSA-N",
+   "formula": "C8H11NO3",
+   "pubchem_title": "Norepinephrine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Histamine",
+   "smiles": "NCCc1cnc[nH]1",
+   "cid": 774,
+   "inchikey": "NTYJJOPFIAHURM-UHFFFAOYSA-N",
+   "formula": "C5H9N3",
+   "pubchem_title": "Histamine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Acetylcholine",
+   "smiles": "CC(=O)OCC[N+](C)(C)C",
+   "cid": 187,
+   "inchikey": "OIPILFWXSMYKGL-UHFFFAOYSA-N",
+   "formula": "C7H16NO2+",
+   "pubchem_title": "Acetylcholine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Adenosine",
+   "smiles": "Nc1ncnc2c1ncn2C1OC(CO)C(O)C1O",
+   "cid": 60961,
+   "inchikey": "OIRDTQYFTABQOQ-KQYNXXCUSA-N",
+   "formula": "C10H13N5O4",
+   "pubchem_title": "Adenosine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Vitamin C",
+   "smiles": "O=C1OC(C(O)CO)C(O)=C1O",
+   "cid": 54670067,
+   "inchikey": "CIWBSHSKHKDKBQ-JLAZNSOCSA-N",
+   "formula": "C6H8O6",
+   "pubchem_title": "L-Ascorbic Acid",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": "known synonym (reviewed by the assistant, not by a chemist)"
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Folic acid",
+   "smiles": "Nc1nc2ncc(CNc3ccc(C(=O)NC(CCC(=O)O)C(=O)O)cc3)nc2c(=O)[nH]1",
+   "cid": 135398658,
+   "inchikey": "OVBPIULPVIDEAO-LBPRGKRZSA-N",
+   "formula": "C19H19N7O6",
+   "pubchem_title": "Folic Acid",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Thiamine",
+   "smiles": "Cc1ncc(C[n+]2csc(CCO)c2C)c(N)n1",
+   "cid": 1130,
+   "inchikey": "JZRWCGZRTZMZEH-UHFFFAOYSA-N",
+   "formula": "C12H17N4OS+",
+   "pubchem_title": "Thiamine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Riboflavin",
+   "smiles": "Cc1cc2nc3c(=O)[nH]c(=O)nc-3n(CC(O)C(O)C(O)CO)c2cc1C",
+   "cid": 493570,
+   "inchikey": "AUNGANRZJHBGPY-SCRDCRAPSA-N",
+   "formula": "C17H20N4O6",
+   "pubchem_title": "Riboflavin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Nicotinamide",
+   "smiles": "NC(=O)c1cccnc1",
+   "cid": 936,
+   "inchikey": "DFPAKSUCGFBDDF-UHFFFAOYSA-N",
+   "formula": "C6H6N2O",
+   "pubchem_title": "Nicotinamide",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Pyridoxine",
+   "smiles": "Cc1ncc(CO)c(CO)c1O",
+   "cid": 1054,
+   "inchikey": "LXNHXLLTXMVWPM-UHFFFAOYSA-N",
+   "formula": "C8H11NO3",
+   "pubchem_title": "Pyridoxine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Retinol",
+   "smiles": "CC(C=CC1=C(C)CCCC1(C)C)=CC=CC(C)=CCO",
+   "cid": 445354,
+   "inchikey": "FPIPGXGPPPQFEQ-OVSJKPMPSA-N",
+   "formula": "C20H30O",
+   "pubchem_title": "Retinol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Cholecalciferol",
+   "smiles": "C=C1CCC(O)CC1=CC=C1CCCC2(C)C1CCC2C(C)CCCC(C)C",
+   "cid": 5280795,
+   "inchikey": "QYSXJUFSXHHAJI-YRZJJWOYSA-N",
+   "formula": "C27H44O",
+   "pubchem_title": "Vitamin D3",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": "known synonym (reviewed by the assistant, not by a chemist)"
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Tocopherol",
+   "smiles": "Cc1c(O)cc2c(c1C)OC(C)(CCCC(C)CCCC(C)CCCC(C)C)CC2",
+   "cid": 14986,
+   "inchikey": "QUEDXNHFTDJVIY-UHFFFAOYSA-N",
+   "formula": "C28H48O2",
+   "pubchem_title": "Tocopherols",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Urea",
+   "smiles": "NC(N)=O",
+   "cid": 1176,
+   "inchikey": "XSQUKJJJFZCRTK-UHFFFAOYSA-N",
+   "formula": "CH4N2O",
+   "pubchem_title": "Urea",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Glycine",
+   "smiles": "NCC(=O)O",
+   "cid": 750,
+   "inchikey": "DHMQDGOQFOQNFH-UHFFFAOYSA-N",
+   "formula": "C2H5NO2",
+   "pubchem_title": "Glycine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Creatine",
+   "smiles": "CN(CC(=O)O)C(=N)N",
+   "cid": 586,
+   "inchikey": "CVSVTCORWBXHQV-UHFFFAOYSA-N",
+   "formula": "C4H9N3O2",
+   "pubchem_title": "Creatine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Taurine",
+   "smiles": "NCCS(=O)(=O)O",
+   "cid": 1123,
+   "inchikey": "XOAAWQZATWQOTB-UHFFFAOYSA-N",
+   "formula": "C2H7NO3S",
+   "pubchem_title": "Taurine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Capsaicin",
+   "smiles": "COc1cc(CNC(=O)CCCCC=CC(C)C)ccc1O",
+   "cid": 1548943,
+   "inchikey": "YKPUWZUDDOIDPM-SOFGYWHQSA-N",
+   "formula": "C18H27NO3",
+   "pubchem_title": "Capsaicin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Menthol",
+   "smiles": "CC1CCC(C(C)C)C(O)C1",
+   "cid": 1254,
+   "inchikey": "NOOLISFMXDJSKH-UHFFFAOYSA-N",
+   "formula": "C10H20O",
+   "pubchem_title": "Menthol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Curcumin",
+   "smiles": "COc1cc(C=CC(=O)CC(=O)C=Cc2ccc(O)c(OC)c2)ccc1O",
+   "cid": 969516,
+   "inchikey": "VFLDPWHFBUODDF-FCXRPNKRSA-N",
+   "formula": "C21H20O6",
+   "pubchem_title": "Curcumin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Resveratrol",
+   "smiles": "Oc1ccc(C=Cc2cc(O)cc(O)c2)cc1",
+   "cid": 445154,
+   "inchikey": "LUKBXSAWLPMMSZ-OWOJBTEDSA-N",
+   "formula": "C14H12O3",
+   "pubchem_title": "Resveratrol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Quercetin",
+   "smiles": "O=c1c(O)c(-c2ccc(O)c(O)c2)oc2cc(O)cc(O)c12",
+   "cid": 5280343,
+   "inchikey": "REFJWTPEDVJJIY-UHFFFAOYSA-N",
+   "formula": "C15H10O7",
+   "pubchem_title": "Quercetin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Lactic acid",
+   "smiles": "CC(O)C(=O)O",
+   "cid": 612,
+   "inchikey": "JVTAAEKCZFNVCJ-UHFFFAOYSA-N",
+   "formula": "C3H6O3",
+   "pubchem_title": "Lactic Acid",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Citric acid",
+   "smiles": "O=C(O)CC(O)(CC(=O)O)C(=O)O",
+   "cid": 311,
+   "inchikey": "KRKNYBCHXYNGOX-UHFFFAOYSA-N",
+   "formula": "C6H8O7",
+   "pubchem_title": "Citric Acid",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Salicylic acid",
+   "smiles": "O=C(O)c1ccccc1O",
+   "cid": 338,
+   "inchikey": "YGSDEFSMJLZEOE-UHFFFAOYSA-N",
+   "formula": "C7H6O3",
+   "pubchem_title": "Salicylic Acid",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Benzoic acid",
+   "smiles": "O=C(O)c1ccccc1",
+   "cid": 243,
+   "inchikey": "WPYMKLBDIGXBTP-UHFFFAOYSA-N",
+   "formula": "C7H6O2",
+   "pubchem_title": "Benzoic Acid",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Aniline",
+   "smiles": "Nc1ccccc1",
+   "cid": 6115,
+   "inchikey": "PAYRUJLWNCNPSJ-UHFFFAOYSA-N",
+   "formula": "C6H7N",
+   "pubchem_title": "Aniline",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Phenol",
+   "smiles": "Oc1ccccc1",
+   "cid": 996,
+   "inchikey": "ISWSIDIOOBJBQZ-UHFFFAOYSA-N",
+   "formula": "C6H6O",
+   "pubchem_title": "Phenol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Toluene",
+   "smiles": "Cc1ccccc1",
+   "cid": 1140,
+   "inchikey": "YXFVVABEGXRONW-UHFFFAOYSA-N",
+   "formula": "C7H8",
+   "pubchem_title": "Toluene",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Acetone",
+   "smiles": "CC(C)=O",
+   "cid": 180,
+   "inchikey": "CSCPPACGZOOCGX-UHFFFAOYSA-N",
+   "formula": "C3H6O",
+   "pubchem_title": "Acetone",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Glycerol",
+   "smiles": "OCC(O)CO",
+   "cid": 753,
+   "inchikey": "PEDCQBHIVMGVHV-UHFFFAOYSA-N",
+   "formula": "C3H8O3",
+   "pubchem_title": "Glycerol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Sucrose",
+   "smiles": "OCC1OC(OC2(CO)OC(CO)C(O)C2O)C(O)C(O)C1O",
+   "cid": 5988,
+   "inchikey": "CZMRCDWAGMRECN-UGDNZRGBSA-N",
+   "formula": "C12H22O11",
+   "pubchem_title": "Sucrose",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Lactose",
+   "smiles": "OCC1OC(OC2C(CO)OC(O)C(O)C2O)C(O)C(O)C1O",
+   "cid": 6134,
+   "inchikey": "GUBGYTABKSRVRQ-DCSYEGIMSA-N",
+   "formula": "C12H22O11",
+   "pubchem_title": "beta-Lactose",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Dapsone",
+   "smiles": "Nc1ccc(S(=O)(=O)c2ccc(N)cc2)cc1",
+   "cid": 2955,
+   "inchikey": "MQJKPEGWNLWLTK-UHFFFAOYSA-N",
+   "formula": "C12H12N2O2S",
+   "pubchem_title": "Dapsone",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Bortezomib",
+   "smiles": "CC(C)CC(NC(=O)C(Cc1ccccc1)NC(=O)c1cnccn1)B(O)O",
+   "cid": 387447,
+   "inchikey": "GXJABQQUPOEUTA-RDJZCZTQSA-N",
+   "formula": "C19H25BN4O4",
+   "pubchem_title": "Bortezomib",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Lenalidomide",
+   "smiles": "Nc1cccc2c1CN(C1CCC(=O)NC1=O)C2=O",
+   "cid": 216326,
+   "inchikey": "GOTYRUGSSMKFNF-UHFFFAOYSA-N",
+   "formula": "C13H13N3O3",
+   "pubchem_title": "Lenalidomide",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Thalidomide",
+   "smiles": "O=C1CCC(N2C(=O)c3ccccc3C2=O)C(=O)N1",
+   "cid": 5426,
+   "inchikey": "UEJJHQNACJXSKW-UHFFFAOYSA-N",
+   "formula": "C13H10N2O4",
+   "pubchem_title": "Thalidomide",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Sorafenib",
+   "smiles": "CNC(=O)c1cc(Oc2ccc(NC(=O)Nc3ccc(Cl)c(C(F)(F)F)c3)cc2)ccn1",
+   "cid": 216239,
+   "inchikey": "MLDQJTXFUGDVEO-UHFFFAOYSA-N",
+   "formula": "C21H16ClF3N4O3",
+   "pubchem_title": "Sorafenib",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Sunitinib",
+   "smiles": "CCN(CC)CCNC(=O)c1c(C)[nH]c(C=C2C(=O)Nc3ccc(F)cc32)c1C",
+   "cid": 5329102,
+   "inchikey": "WINHZLLDWRZWRT-ATVHPVEESA-N",
+   "formula": "C22H27FN4O2",
+   "pubchem_title": "Sunitinib",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Tofacitinib",
+   "smiles": "CC1CCN(C(=O)CC#N)CC1N(C)c1ncnc2[nH]ccc12",
+   "cid": 9926791,
+   "inchikey": "UJLAWZDWDVHWOW-YPMHNXCESA-N",
+   "formula": "C16H20N6O",
+   "pubchem_title": "Tofacitinib",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Ibrutinib",
+   "smiles": "C=CC(=O)N1CCCC(n2nc(-c3ccc(Oc4ccccc4)cc3)c3c(N)ncnc32)C1",
+   "cid": 24821094,
+   "inchikey": "XYFPWWZEPKGCCK-GOSISDBHSA-N",
+   "formula": "C25H24N6O2",
+   "pubchem_title": "Ibrutinib",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Naloxegol",
+   "smiles": "C=CCN1CCC23c4c5ccc(O)c4OC2C(OCCOCCOCCOCCOCCOCCOCCOC)CCC3(O)C1C5",
+   "cid": 56959087,
+   "inchikey": "XNKCCCKFOQNXKV-ZRSCBOBOSA-N",
+   "formula": "C34H53NO11",
+   "pubchem_title": "Naloxegol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Varenicline",
+   "smiles": "c1cnc2cc3c(cc2n1)C1CNCC3C1",
+   "cid": 5310966,
+   "inchikey": "JQSHBVHOMNKWFT-DTORHVGOSA-N",
+   "formula": "C13H13N3",
+   "pubchem_title": "Varenicline",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Orlistat",
+   "smiles": "CCCCCCCCCCCC(CC1OC(=O)C1CCCCCC)OC(=O)C(CC(C)C)NC=O",
+   "cid": 3034010,
+   "inchikey": "AHLBNYSZXLDEJQ-FWEHEUNISA-N",
+   "formula": "C29H53NO5",
+   "pubchem_title": "Orlistat",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Sibutramine",
+   "smiles": "CC(C)CC(N(C)C)C1(c2ccc(Cl)cc2)CCC1",
+   "cid": 5210,
+   "inchikey": "UNAANXDKBXWMLN-UHFFFAOYSA-N",
+   "formula": "C17H26ClN",
+   "pubchem_title": "Sibutramine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Minoxidil",
+   "smiles": "N=c1nc(N2CCCCC2)cc(N)n1O",
+   "cid": 4201,
+   "inchikey": "ZIMGGGWCDYVHOY-UHFFFAOYSA-N",
+   "formula": "C9H15N5O",
+   "pubchem_title": "Minoxidil",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Isotretinoin",
+   "smiles": "CC(C=CC1=C(C)CCCC1(C)C)=CC=CC(C)=CC(=O)O",
+   "cid": 5282379,
+   "inchikey": "SHGAZHPCJJPHSC-XFYACQKRSA-N",
+   "formula": "C20H28O2",
+   "pubchem_title": "Isotretinoin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Tretinoin",
+   "smiles": "CC(C=CC1=C(C)CCCC1(C)C)=CC=CC(C)=CC(=O)O",
+   "cid": 444795,
+   "inchikey": "SHGAZHPCJJPHSC-YCNIQYBTSA-N",
+   "formula": "C20H28O2",
+   "pubchem_title": "Retinoic Acid",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": "known synonym (reviewed by the assistant, not by a chemist)"
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Clotrimazole",
+   "smiles": "Clc1ccccc1C(c1ccccc1)(c1ccccc1)n1ccnc1",
+   "cid": 2812,
+   "inchikey": "VNFPBHJOKIVQEB-UHFFFAOYSA-N",
+   "formula": "C22H17ClN2",
+   "pubchem_title": "Clotrimazole",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Miconazole",
+   "smiles": "Clc1ccc(COC(Cn2ccnc2)c2ccc(Cl)cc2Cl)c(Cl)c1",
+   "cid": 4189,
+   "inchikey": "BYBLEWFAAKGYCD-UHFFFAOYSA-N",
+   "formula": "C18H14Cl4N2O",
+   "pubchem_title": "Miconazole",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Benzocaine",
+   "smiles": "CCOC(=O)c1ccc(N)cc1",
+   "cid": 2337,
+   "inchikey": "BLFLLBZGZJTVJG-UHFFFAOYSA-N",
+   "formula": "C9H11NO2",
+   "pubchem_title": "Benzocaine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Bupivacaine",
+   "smiles": "CCCCN1CCCCC1C(=O)Nc1c(C)cccc1C",
+   "cid": 2474,
+   "inchikey": "LEBVLXFERQHONN-UHFFFAOYSA-N",
+   "formula": "C18H28N2O",
+   "pubchem_title": "Bupivacaine (USAN:INN:BAN)",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Ketamine",
+   "smiles": "CNC1(c2ccccc2Cl)CCCCC1=O",
+   "cid": 3821,
+   "inchikey": "YQEZLKZALYSWHR-UHFFFAOYSA-N",
+   "formula": "C13H16ClNO",
+   "pubchem_title": "Ketamine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Propofol",
+   "smiles": "CC(C)c1cccc(C(C)C)c1O",
+   "cid": 4943,
+   "inchikey": "OLBCVFGFOZPWHH-UHFFFAOYSA-N",
+   "formula": "C12H18O",
+   "pubchem_title": "Propofol",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Midazolam",
+   "smiles": "Cc1ncc2n1-c1ccc(Cl)cc1C(c1ccccc1F)=NC2",
+   "cid": 4192,
+   "inchikey": "DDLIGBOFAVUZHB-UHFFFAOYSA-N",
+   "formula": "C18H13ClFN3",
+   "pubchem_title": "Midazolam",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Sevoflurane",
+   "smiles": "FCOC(C(F)(F)F)C(F)(F)F",
+   "cid": 5206,
+   "inchikey": "DFEYYRMXOJXZRJ-UHFFFAOYSA-N",
+   "formula": "C4H3F7O",
+   "pubchem_title": "Sevoflurane",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Succinylcholine",
+   "smiles": "C[N+](C)(C)CCOC(=O)CCC(=O)OCC[N+](C)(C)C",
+   "cid": 5314,
+   "inchikey": "AXOIZCJOOAYSMI-UHFFFAOYSA-N",
+   "formula": "C14H30N2O4+2",
+   "pubchem_title": "Succinylcholine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Rocuronium",
+   "smiles": "C=CC[N+]1(C2CC3C4CCC5CC(O)C(N6CCOCC6)CC5(C)C4CCC3(C)C2OC(C)=O)CCCC1",
+   "cid": 441290,
+   "inchikey": "YXRDKMPIGHSVRX-OOJCLDBCSA-N",
+   "formula": "C32H53N2O4+",
+   "pubchem_title": "Rocuronium",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Neomycin",
+   "smiles": "NCC1OC(OC2C(CO)OC(OC3C(O)C(N)CC(N)C3OC3OC(CN)C(O)C(O)C3N)C2O)C(N)C(O)C1O",
+   "cid": 8378,
+   "inchikey": "PGBHMTALBVVCIT-VCIWKGPPSA-N",
+   "formula": "C23H46N6O13",
+   "pubchem_title": "Neomycin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Streptomycin",
+   "smiles": "CNC1C(OC2C(OC3C(O)C(O)C(N=C(N)N)C(O)C3N=C(N)N)OC(C)C2(O)C=O)OC(CO)C(O)C1O",
+   "cid": 19649,
+   "inchikey": "UCSJYZPVAKXKNQ-HZYVHMACSA-N",
+   "formula": "C21H39N7O12",
+   "pubchem_title": "Streptomycin",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  },
+  {
+   "name": "Chlorhexidine",
+   "smiles": "NC(=NCCCCCCN=C(N)N=C(N)Nc1ccc(Cl)cc1)N=C(N)Nc1ccc(Cl)cc1",
+   "cid": 9552079,
+   "inchikey": "GHXZTYHSJHQHIJ-UHFFFAOYSA-N",
+   "formula": "C22H30Cl2N10",
+   "pubchem_title": "Chlorhexidine",
+   "checks": {
+    "parses": true,
+    "single_fragment": true,
+    "weight_matches_pubchem": true,
+    "title_matches_name": true
+   },
+   "passed": true,
+   "source": "PubChem PUG REST (name -> CID)",
+   "retrieved": "2026-11-25"
+  }
+ ],
+ "excluded": [
+  {
+   "name": "Lithium carbonate",
+   "reason": "failed automated check: single_fragment"
+  },
+  {
+   "name": "Heparin",
+   "reason": "not found"
+  },
+  {
+   "name": "Glimepiride",
+   "reason": "failed automated check: title_matches_name"
+  },
+  {
+   "name": "Doxycycline",
+   "reason": "failed automated check: title_matches_name"
+  },
+  {
+   "name": "Ivermectin",
+   "reason": "not found"
+  },
+  {
+   "name": "Cisplatin",
+   "reason": "failed automated check: single_fragment, title_matches_name"
+  },
+  {
+   "name": "Atropine",
+   "reason": "failed automated check: title_matches_name"
+  },
+  {
+   "name": "Scopolamine",
+   "reason": "failed automated check: title_matches_name"
+  },
+  {
+   "name": "Cyanocobalamin",
+   "reason": "failed automated check: single_fragment"
+  },
+  {
+   "name": "Povidone-iodine",
+   "reason": "failed automated check: single_fragment"
+  }
+ ]
+}

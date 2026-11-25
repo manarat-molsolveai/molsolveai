@@ -426,6 +426,12 @@ with tab_quiz:
 with tab_card:
     st.markdown(v6.MODEL_CARD[lang])
     st.table(pd.DataFrame({"task": list(model.test_metrics), "score": [", ".join(f"{k} {v:.2f}" for k, v in m.items()) for m in model.test_metrics.values()]}))
+    st.subheader(L("Reference drug library", "مكتبة الأدوية المرجعية"))
+    st.write(L(f"{ultra.LIB_INFO['count']} compounds, identities taken from {ultra.LIB_INFO['source']} (name to CID), retrieved {ultra.LIB_INFO['generated']}. Each entry passed automated checks: structure parses, single fragment, molecular weight equals PubChem's, PubChem title matches the name. {len(ultra._LIBJ['excluded'])} candidates were excluded because they failed a check. The library is used only for similarity, novelty, teaching and comparison. It is NOT experimental ground truth and was not reviewed by a chemist.",
+               f"{ultra.LIB_INFO['count']} مركباً، هويتها من {ultra.LIB_INFO['source']} (من الاسم إلى رقم CID)، جُلبت بتاريخ {ultra.LIB_INFO['generated']}. اجتاز كل مركب فحوصاً آلية: البنية صالحة، جزء واحد، الوزن الجزيئي مطابق لـ PubChem، وعنوان PubChem يطابق الاسم. استُبعد {len(ultra._LIBJ['excluded'])} مرشحاً لأنه رسب في فحص. تُستخدم المكتبة للتشابه والجدة والتعليم والمقارنة فقط. وهي ليست حقيقة تجريبية ولم يراجعها كيميائي."))
+    with st.expander(L("Library entries and excluded candidates", "مداخل المكتبة والمرشحون المستبعدون")):
+        st.dataframe(pd.DataFrame([{"name": n, "CID": e["cid"], "InChIKey": e["inchikey"], "SMILES": e["smiles"][:60]} for n, e in ultra.LIB_META.items()]), hide_index=True)
+        st.dataframe(pd.DataFrame(ultra._LIBJ["excluded"]), hide_index=True)
     bl = v7.baseline()
     if bl:
         st.subheader(L("Comparison with simple baselines", "مقارنة مع خطوط أساس بسيطة"))

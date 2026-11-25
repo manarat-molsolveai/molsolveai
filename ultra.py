@@ -8,27 +8,11 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-LIB = {
- "Aspirin": "CC(=O)Oc1ccccc1C(=O)O", "Paracetamol": "CC(=O)Nc1ccc(O)cc1", "Ibuprofen": "CC(C)Cc1ccc(cc1)C(C)C(=O)O",
- "Naproxen": "COc1ccc2cc(ccc2c1)C(C)C(=O)O", "Diclofenac": "OC(=O)Cc1ccccc1Nc1c(Cl)cccc1Cl",
- "Caffeine": "Cn1cnc2c1c(=O)n(C)c(=O)n2C", "Theophylline": "Cn1c2nc[nH]c2c(=O)n(C)c1=O", "Nicotine": "CN1CCCC1c1cccnc1",
- "Diazepam": "CN1C(=O)CN=C(c2ccccc2)c2cc(Cl)ccc12", "Morphine": "CN1CCC23C4C1CC5=C2C(=C(C=C5)O)OC3C(C=C4)O",
- "Codeine": "COc1ccc2CC3N(C)CCC45C(Oc1c24)C(O)C=CC35", "Penicillin G": "CC1(C)SC2C(NC(=O)Cc3ccccc3)C(=O)N2C1C(=O)O",
- "Amoxicillin": "CC1(C)SC2C(NC(=O)C(N)c3ccc(O)cc3)C(=O)N2C1C(=O)O", "Metformin": "CN(C)C(=N)NC(N)=N",
- "Atenolol": "CC(C)NCC(O)COc1ccc(CC(N)=O)cc1", "Propranolol": "CC(C)NCC(O)COc1cccc2ccccc12",
- "Lidocaine": "CCN(CC)CC(=O)Nc1c(C)cccc1C", "Fluoxetine": "CNCCC(Oc1ccc(cc1)C(F)(F)F)c1ccccc1",
- "Sertraline": "CNC1CCC(c2ccc(Cl)c(Cl)c2)c2ccccc12", "Omeprazole": "COc1ccc2[nH]c(nc2c1)S(=O)Cc1ncc(C)c(OC)c1C",
- "Ranitidine": "CNC(NCCSCc1ccc(CN(C)C)o1)=C[N+]([O-])=O", "Warfarin": "CC(=O)CC(c1ccccc1)c1c(O)c2ccccc2oc1=O",
- "Chloramphenicol": "OCC(NC(=O)C(Cl)Cl)C(O)c1ccc(cc1)[N+]([O-])=O", "Ciprofloxacin": "OC(=O)c1cn(C2CC2)c2cc(N3CCNCC3)c(F)cc2c1=O",
- "Sildenafil": "CCCc1nn(C)c2c1nc([nH]c2=O)-c1cc(ccc1OCC)S(=O)(=O)N1CCN(C)CC1",
- "Atorvastatin": "CC(C)c1c(C(=O)Nc2ccccc2)c(-c2ccccc2)c(-c2ccc(F)cc2)n1CCC(O)CC(O)CC(O)=O",
- "Simvastatin": "CCC(C)(C)C(=O)OC1CC(C)C=C2C=CC(C)C(CCC3CC(O)CC(=O)O3)C12", "Cholesterol": "CC(C)CCCC(C)C1CCC2C1(CCC1C2CC=C2CC(O)CCC21C)C",
- "Glucose": "OCC1OC(O)C(O)C(O)C1O", "Ethanol": "CCO", "Dopamine": "NCCc1ccc(O)c(O)c1", "Serotonin": "NCCc1c[nH]c2ccc(O)cc12",
- "Testosterone": "CC12CCC3C(CCC4=CC(=O)CCC34C)C1CCC2O", "Estradiol": "CC12CCC3c4ccc(O)cc4CCC3C2CCC1O",
- "Hydrocortisone": "CC12CCC(=O)C=C1CCC1C2C(O)CC2(C)C1CCC2(O)C(=O)CO", "Loratadine": "CCOC(=O)N1CCC(=C2c3ccc(Cl)cc3CCc3cccnc23)CC1",
- "Cetirizine": "OC(=O)COCCN1CCN(CC1)C(c1ccccc1)c1ccc(Cl)cc1", "Salbutamol": "CC(C)(C)NCC(O)c1ccc(O)c(CO)c1",
- "Acyclovir": "Nc1nc2n(COCCO)cnc2c(=O)[nH]1", "Tamoxifen": "CCC(=C(c1ccccc1)c1ccc(OCCN(C)C)cc1)c1ccccc1",
-}
+import pathlib
+_LIBJ = json.loads((pathlib.Path(__file__).resolve().parent / "library.json").read_text())
+LIB_META = {e["name"]: e for e in _LIBJ["entries"]}
+LIB = {n: e["smiles"] for n, e in LIB_META.items()}
+LIB_INFO = {"count": len(LIB), "source": _LIBJ["source"], "generated": _LIBJ["generated"]}
 _fp = lambda m: AllChem.GetMorganFingerprintAsBitVect(m, 2, nBits=2048)
 _LIBFP = {n: _fp(Chem.MolFromSmiles(s)) for n, s in LIB.items() if Chem.MolFromSmiles(s)}
 

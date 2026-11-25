@@ -102,8 +102,8 @@ def build(r, model, pc=None, lang="ar", src="smiles"):
         pc_ar, pc_en = " تعذّر الاتصال بـ PubChem.", " PubChem was unreachable."
     else:
         pc_ar, pc_en = " لم يُفحص في PubChem.", " PubChem not checked."
-    kind_ar = "مطابق لدواء معروف في مكتبتنا" if top_sim >= 0.95 else "قريب من دواء معروف" if top_sim >= 0.55 else "بعيد عن مكتبة الأدوية لدينا"
-    kind_en = "matches a known drug in our library" if top_sim >= 0.95 else "close to a known drug" if top_sim >= 0.55 else "far from our drug library"
+    kind_ar = "مطابق لمركب معروف في مكتبتنا" if top_sim >= 0.95 else "قريب من مركب معروف" if top_sim >= 0.55 else f"بعيد عن مكتبتنا المرجعية ({ultra.LIB_INFO['count']} مركباً)"
+    kind_en = "matches a known drug in our library" if top_sim >= 0.95 else "close to a known drug" if top_sim >= 0.55 else f"far from our reference library ({ultra.LIB_INFO['count']} compounds)"
     ax("الجدة", "Novelty", "info", f"{kind_ar} (الأقرب: {top_name} {top_sim*100:.0f}%). أعلى تشابه مع {ad['n_ref']:,} جزيء تدريب: {ad['max_sim']}." + pc_ar,
        f"{kind_en} (nearest: {top_name} {top_sim*100:.0f}%). Highest similarity to {ad['n_ref']:,} training molecules: {ad['max_sim']}." + pc_en)
     # 7 experimental evidence (always none)
