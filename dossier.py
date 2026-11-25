@@ -4,6 +4,8 @@ import hashlib, html, json, datetime, urllib.request, urllib.parse
 from rdkit import Chem, rdBase
 from rdkit.Chem import rdMolDescriptors
 import config, v6, ultra
+SCOPE_AR = "حدود الصلاحية: للتعليم والفرز الأولي فقط، لا لقرار علاجي أو دوائي أو لسلامة الاستخدام، ولا تغني عن قياس مخبري."
+SCOPE_EN = "Scope of validity: teaching and first-pass screening only, not for treatment, drug or safety decisions, and no substitute for lab measurement."
 
 APP_VERSION = "7.0"
 _SHA = None
@@ -21,7 +23,7 @@ def pubchem(smiles):
     try:
         key = Chem.MolToInchiKey(Chem.MolFromSmiles(smiles))
         u = "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/inchikey/%s/cids/JSON" % urllib.parse.quote(key)
-        with urllib.request.urlopen(u, timeout=8) as r:
+        with urllib.request.urlopen(u, timeout=5) as r:
             cid = json.load(r)["IdentifierList"]["CID"][0]
         return {"status": "found", "cid": cid, "url": f"https://pubchem.ncbi.nlm.nih.gov/compound/{cid}"}
     except urllib.error.HTTPError as e:
@@ -35,13 +37,19 @@ CALC, PRED, UNV = "calc", "pred", "unverified"
 TAG = {"ar": {CALC: "محسوب بدقة", PRED: "تنبؤ تقديري", UNV: "غير متحقق تجريبياً"},
        "en": {CALC: "computed exactly", PRED: "estimated prediction", UNV: "not experimentally verified"}}
 COL = {"green": "#2e9e44", "yellow": "#e6a800", "red": "#d93025", "info": "#1a73e8", "none": "#9aa0a6"}
+CRITERIA = {"ar": "معايير الألوان (تقديرية وضعناها بالاجتهاد، لم تُعايَر على بيانات خارجية): سلامة البنية: أخضر إن كانت بلا أجزاء متعددة أو مراكز غير محددة. عدم اليقين: أخضر 75% فأكثر، أصفر 50 إلى 74، أحمر أقل. دعم النطاق: أخضر تشابه 0.55 فأكثر، أصفر 0.35 إلى 0.54، أحمر أقل. موثوقية النموذج: أخضر إن كان 11 تنبؤاً أو أكثر بمستوى «أثق به»، أصفر 7 إلى 10، أحمر أقل. قابلية التصنيع: أخضر SA حتى 3.5، أصفر حتى 6، أحمر أعلى. الجدة والأدلة التجريبية للعلم فقط بلا حكم.",
+ "en": "Colour criteria (judgment-based, not calibrated on external data): structure: green if single fragment and no undefined stereocentres. Uncertainty: green 75%+, yellow 50-74, red below. Domain: green similarity 0.55+, yellow 0.35-0.54, red below. Model reliability: green if 11+ predictions rated trust, yellow 7-10, red below. Synthesizability: green SA up to 3.5, yellow up to 6, red above. Novelty and experimental evidence are informational only."}
+LBL_AR = {"Heavy atoms": "الذرات الثقيلة", "Lipinski violations": "مخالفات ليبنسكي", "Rings": "الحلقات", "Formula": "الصيغة", "app_version": "نسخة التطبيق", "model_sha256": "بصمة النموذج", "rdkit": "نسخة RDKit", "input_sha256": "بصمة المدخل", "generated_utc": "وقت التوليد (UTC)", "note": "ملاحظة"}
 ICON = {"green": "🟢", "yellow": "🟡", "red": "🔴", "info": "🔵", "none": "⚪"}
 
 
 VS = {"ar": {"Verified": "متحقق حسابياً", "Pending": "قيد التحقق", "Unknown": "غير معروف"}, "en": {"Verified": "Verified (computational)", "Pending": "Pending", "Unknown": "Unknown"}}
 
 
-def build(r, model, pc=None, lang="ar"):
+SRC = {"smiles": ("إدخال SMILES نصي", "Typed SMILES"), "name": ("بحث باسم المركب في PubChem", "PubChem name lookup"), "draw": ("رسم في المحرر", "Structure editor drawing"), "batch": ("ملف دفعة CSV أو نص ملصق", "Batch CSV or pasted text")}
+
+
+def build(r, model, pc=None, lang="ar", src="smiles"):
     ar = lang == "ar"
     smi = r["smiles"]
     m = Chem.MolFromSmiles(smi)
@@ -96,8 +104,8 @@ def build(r, model, pc=None, lang="ar"):
         pc_ar, pc_en = " لم يُفحص في PubChem.", " PubChem not checked."
     kind_ar = "مطابق لدواء معروف في مكتبتنا" if top_sim >= 0.95 else "قريب من دواء معروف" if top_sim >= 0.55 else "بعيد عن مكتبة الأدوية لدينا"
     kind_en = "matches a known drug in our library" if top_sim >= 0.95 else "close to a known drug" if top_sim >= 0.55 else "far from our drug library"
-    ax("الجدة", "Novelty", "info", f"{kind_ar} (الأقرب: {top_name} {top_sim*100:.0f}%)." + pc_ar,
-       f"{kind_en} (nearest: {top_name} {top_sim*100:.0f}%)." + pc_en)
+    ax("الجدة", "Novelty", "info", f"{kind_ar} (الأقرب: {top_name} {top_sim*100:.0f}%). أعلى تشابه مع {ad['n_ref']:,} جزيء تدريب: {ad['max_sim']}." + pc_ar,
+       f"{kind_en} (nearest: {top_name} {top_sim*100:.0f}%). Highest similarity to {ad['n_ref']:,} training molecules: {ad['max_sim']}." + pc_en)
     # 7 experimental evidence (always none)
     ax("الأدلة التجريبية", "Experimental evidence", "none", "لا توجد أدلة تجريبية في هذا الملف.", "No experimental evidence is included in this file.")
 
@@ -110,9 +118,6 @@ def build(r, model, pc=None, lang="ar"):
         val = f"{v['value']:.2f} ± {v['uncertainty']:.2f}" if v["type"] == "regression" else f"{v['prob']*100:.0f}% ± {v['uncertainty']*100:.0f}"
         lvl = next(x[1] for x in tt if x[0] == t)
         preds.append({"endpoint": t, "value": val, "trust": v6.TRUST_NAME[lang][lvl], "test_metric": model.test_metrics.get(t, {})})
-    status = [
-        ("حالة التحقق", "Verification status", None, None),
-    ]
     validation = [
         {"item": "صلاحية البنية" if ar else "Structure validity", "status": "Verified",
          "note": "تحقق حسابي بـ RDKit (ليس تجريبياً)." if ar else "Computational check with RDKit (not experimental)."},
@@ -128,7 +133,7 @@ def build(r, model, pc=None, lang="ar"):
     d = {
         "report_id": "MS-" + hashlib.sha256(json.dumps(core, sort_keys=True).encode()).hexdigest()[:12].upper(),
         "identity": {"canonical_smiles": smi, "inchikey": Chem.MolToInchiKey(m), "formula": rdMolDescriptors.CalcMolFormula(m),
-                     "source": "إدخال المستخدم (SMILES أو اسم PubChem أو رسم)" if ar else "User input (SMILES, PubChem name or drawing)",
+                     "source": SRC.get(src, SRC["smiles"])[0 if ar else 1],
                      "pubchem": pc or {"status": "not_checked"}, "fragments": frags},
         "properties": {"values": props, "tag": TAG[lang][CALC]},
         "prediction": {"rows": preds, "tag": TAG[lang][PRED], "model": "MolSolveAI GNN+Morgan fingerprint", "passes": 30, "seed": 0,
@@ -140,6 +145,7 @@ def build(r, model, pc=None, lang="ar"):
                             "input_sha256": hashlib.sha256(smi.encode()).hexdigest(), "generated_utc": now,
                             "note": "نفس المدخل ونفس نسخة النموذج يعطيان النتائج نفسها (بذرة ثابتة)." if ar else "Same input and model version give the same results (fixed seed)."},
         "disclaimer": config.DISCLAIMER,
+        "scope_of_validity": (SCOPE_AR if ar else SCOPE_EN),
     }
     return d
 
@@ -169,14 +175,15 @@ def html_report(d, lang="ar"):
            f"<tr><td>{T('المصدر','Source')}</td><td>{e(i['source'])}</td></tr>",
            f"<tr><td>PubChem</td><td>{pc_cell(i['pubchem'], ar)}</td></tr></table>",
            f"<h2>2. {T('الخصائص','Properties')} <span class='tag'>{e(d['properties']['tag'])}</span></h2><table>"]
-    out += [f"<tr><td>{e(str(k))}</td><td>{e(str(v))}</td></tr>" for k, v in d["properties"]["values"]]
+    out += [f"<tr><td>{e(LBL_AR.get(str(k), str(k)) if ar else str(k))}</td><td dir='ltr'>{e(str(v))}</td><td><span class='tag'>{e(d['properties']['tag'])}</span></td></tr>" for k, v in d["properties"]["values"]]
     out.append(f"</table><h2>3. {T('تنبؤ الذكاء الاصطناعي','AI prediction')} <span class='tag'>{e(d['prediction']['tag'])}</span></h2><table>")
-    out += [f"<tr><td>{e(p['endpoint'])}</td><td dir='ltr'>{e(p['value'])}</td><td>{e(p['trust'])}</td></tr>" for p in d["prediction"]["rows"]]
+    out += [f"<tr><td>{e(p['endpoint'])}</td><td dir='ltr'>{e(p['value'])}</td><td>{e(p['trust'])}</td><td><span class='tag'>{e(d['prediction']['tag'])}</span></td></tr>" for p in d["prediction"]["rows"]]
     out.append(f"</table><h2>4. {T('لوحة المحاور (بلا درجة واحدة)','Axis panel (no single score)')}</h2><table>")
     out += [f"<tr><td><span style='color:{COL[a['level']]}'>&#9679;</span> {e(a['axis'])}</td><td>{e(a['why'])}</td></tr>" for a in d["axes"]]
     out.append(f"</table><h2>5. {T('حالة التحقق','Verification status')}</h2><table>")
     out += [f"<tr><td>{e(v['item'])}</td><td><b>{e(VS[lang][v['status']])}</b></td><td>{e(v['note'])}</td></tr>" for v in d["validation"]]
     out.append(f"</table><h2>6. {T('سجل إعادة الإنتاج','Reproducibility record')}</h2><table>")
-    out += [f"<tr><td>{e(k)}</td><td>{e(str(v))}</td></tr>" for k, v in d["reproducibility"].items()]
-    out.append(f"</table><p><small>{e(d['disclaimer'])}</small></p></body></html>")
+    out += [f"<tr><td>{e(LBL_AR.get(k, k) if ar else k)}</td><td dir='ltr'>{e(str(v))}</td></tr>" for k, v in d["reproducibility"].items()]
+    out.append("</table><p><small>" + e(CRITERIA[lang]) + "</small></p><table>")
+    out.append(f"</table><p><b>{e(d['scope_of_validity'])}</b></p><p><small>{e(d['disclaimer'])}</small></p></body></html>")
     return "".join(out)

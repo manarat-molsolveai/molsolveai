@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 from rdkit import Chem
 from rdkit.Chem import Draw
-import config, infer, druglike, ultra, ultra2, v6, dossier
+import config, infer, druglike, ultra, ultra2, v6, v7, dossier
 from chem import canonical
 from i18n import T, PLANS
 
@@ -85,7 +85,12 @@ def analyze(smi, passes=30):
     return r
 
 
-tab1, tab2, tab_cmp, tab_opt, tab_teach, tab_quiz, tab_card, tab3, tab4 = st.tabs([t["tab_single"], t["tab_batch"], t["tab_cmp"], L("Optimizer", "محسّن الجزيء"), L("Teacher mode", "وضع المعلم"), L("Challenge", "تحدي الكيمياء"), L("Model card", "بطاقة النموذج"), t["tab_plans"], t["tab_about"]])
+tab1, tab2, tab_cmp, tab_opt, tab_teach, tab_quiz, tab_card, tab_ver, tab3, tab4 = st.tabs([t["tab_single"], t["tab_batch"], t["tab_cmp"], L("Optimizer", "محسّن الجزيء"), L("Teacher mode", "وضع المعلم"), L("Challenge", "تحدي الكيمياء"), L("Model card", "بطاقة النموذج"), L("Verify a report", "تحقق من تقرير"), t["tab_plans"], t["tab_about"]])
+
+@st.cache_data(ttl=86400, show_spinner=False)
+def pubchem_cached(smi):
+    return dossier.pubchem(smi)
+
 
 def render(r, key):
     R, ts = r["rules"], r["tasks"]
@@ -108,6 +113,24 @@ def render(r, key):
     s1.caption(v6.sa_text(r["sa"], lang == "ar"))
     s2.metric("CNS-MPO", f"{r['mpo']}/4", help=L("Simplified (4 of 6 criteria). Higher = better for brain drugs.", "نسخة مبسطة (4 من 6 معايير). الأعلى أفضل لأدوية الدماغ."))
     s3.metric(L("Heavy atoms", "الذرات الثقيلة"), R["heavy"])
+    with st.expander(L("📁 Evidence Dossier (status, axes, reproducibility)", "📁 ملف الأدلة (الحالة، المحاور، إعادة الإنتاج)"), expanded=True):
+        pcx = st.checkbox(L("Check PubChem presence (needs internet)", "افحص وجوده في PubChem (يحتاج إنترنت)"), value=True, key=f"pc_{key}")
+        d = dossier.build(r, model, pubchem_cached(r["smiles"]) if pcx else None, lang, st.session_state.get("src", "smiles") if key == "single" else "batch")
+        st.caption(f"{L('Report ID', 'رقم التقرير')}: {d['report_id']}  |  InChIKey: {d['identity']['inchikey']}")
+        st.markdown(f"**{L('Axes (no single score)', 'المحاور (بلا درجة واحدة)')}: {len(d['axes'])}**")
+        for a_ in d["axes"]:
+            st.write(f"{dossier.ICON[a_['level']]} **{a_['axis']}**: {a_['why']}")
+        st.caption(dossier.CRITERIA[lang])
+        st.markdown(f"**{L('Verification status', 'حالة التحقق')}**")
+        st.table(pd.DataFrame([{**v, "status": dossier.VS[lang][v["status"]]} for v in d["validation"]]).rename(columns={"item": L("item", "البند"), "status": L("status", "الحالة"), "note": L("note", "ملاحظة")}))
+        st.markdown(f"**{L('Computed properties', 'الخصائص')}** ({dossier.TAG[lang]['calc']})")
+        st.dataframe(pd.DataFrame(d["properties"]["values"], columns=[L("property", "الخاصية"), L("value", "القيمة")]).astype(str), hide_index=True)
+        st.caption(f"{dossier.TAG[lang]['pred']} / {dossier.TAG[lang]['unverified']}")
+        st.info(v7.SCOPE[lang])
+        st.json(d["reproducibility"], expanded=False)
+        e1, e2 = st.columns(2)
+        e1.download_button(L("Dossier (HTML)", "الملف (HTML)"), dossier.html_report(d, lang), f"dossier_{d['report_id']}.html", "text/html", key=f"dh_{key}")
+        e2.download_button(L("Dossier (JSON)", "الملف (JSON)"), json.dumps(d, ensure_ascii=False, indent=2, default=str), f"dossier_{d['report_id']}.json", key=f"dj_{key}")
     with st.expander(L("🕵️ Molecule Detective (plain explanation)", "🕵️ محقق الجزيء (شرح مبسط)"), expanded=True):
         st.write(v6.detective(r, ad, r["sa"], r["mpo"], lang))
     with st.expander(L("🔎 Trust table: how much to trust each prediction", "🔎 جدول الثقة: كم أثق بكل تنبؤ")):
@@ -115,20 +138,6 @@ def render(r, key):
         st.dataframe(pd.DataFrame({L("prediction", "التنبؤ"): [x[0] for x in tt],
                                    L("trust", "الثقة"): [f"{v6.TRUST_ICON[x[1]]} {v6.TRUST_NAME[lang][x[1]]}" for x in tt],
                                    L("why", "السبب"): [x[2] for x in tt]}), hide_index=True, height=520)
-    with st.expander(L("📁 Evidence Dossier (status, axes, reproducibility)", "📁 ملف الأدلة (الحالة، المحاور، إعادة الإنتاج)")):
-        pcx = st.checkbox(L("Check PubChem presence (needs internet)", "افحص وجوده في PubChem (يحتاج إنترنت)"), key=f"pc_{key}")
-        d = dossier.build(r, model, dossier.pubchem(r["smiles"]) if pcx else None, lang)
-        st.caption(f"{L('Report ID', 'رقم التقرير')}: {d['report_id']}  |  InChIKey: {d['identity']['inchikey']}")
-        st.markdown(f"**{L('Six axes, no single score', 'محاور ستة، بلا درجة واحدة')}**")
-        for a in d["axes"]:
-            st.write(f"{dossier.ICON[a['level']]} **{a['axis']}**: {a['why']}")
-        st.markdown(f"**{L('Verification status', 'حالة التحقق')}**")
-        st.table(pd.DataFrame([{**v, "status": dossier.VS[lang][v["status"]]} for v in d["validation"]]).rename(columns={"item": L("item", "البند"), "status": L("status", "الحالة"), "note": L("note", "ملاحظة")}))
-        st.caption(f"{dossier.TAG[lang]['calc']} / {dossier.TAG[lang]['pred']} / {dossier.TAG[lang]['unverified']}")
-        st.json(d["reproducibility"], expanded=False)
-        e1, e2 = st.columns(2)
-        e1.download_button(L("Dossier (HTML)", "الملف (HTML)"), dossier.html_report(d, lang), f"dossier_{d['report_id']}.html", "text/html", key=f"dh_{key}")
-        e2.download_button(L("Dossier (JSON)", "الملف (JSON)"), json.dumps(d, ensure_ascii=False, indent=2, default=str), f"dossier_{d['report_id']}.json", key=f"dj_{key}")
     rc1, rc2 = st.columns(2)
     rc1.caption(t["radar"]); rc1.pyplot(ultra.radar([("", r)]))
     rc2.caption(t["similar"])
@@ -211,6 +220,7 @@ with tab1:
             st.error(t["limit_hit"].format(n=plan["single"]))
         else:
             r = analyze(smi)
+            st.session_state.src = "smiles" if mode == t["m_smiles"] else "name" if mode == t["m_name"] else "draw"
             if r is None:
                 st.error(t["bad"])
             else:
@@ -234,6 +244,7 @@ with tab2:
         cap = plan["batch"]
         if len(smiles) > cap:
             st.info(t["batch_cap"].format(n=cap)); smiles = smiles[:cap]
+        aud = v7.audit(smiles)
         res, bad = [], []
         prog = st.progress(0.0)
         for i, x in enumerate(smiles):
@@ -243,10 +254,22 @@ with tab2:
             else:
                 res.append(r)
             prog.progress((i + 1) / max(1, len(smiles)))
-        st.session_state.batch = {"res": res, "bad": bad}
+        st.session_state.batch = {"res": res, "bad": bad, "audit": aud}
     B = st.session_state.get("batch")
+    if B and B.get("audit"):
+        st.subheader(L("🧪 Data audit (before predictions)", "🧪 تدقيق البيانات (قبل التنبؤ)"))
+        st.dataframe(pd.DataFrame(v7.audit_rows(B["audit"], lang == "ar")), hide_index=True)
     if B and B["res"]:
         res = B["res"]
+        ur = v7.uncertainty_report(res, model, lang)
+        st.subheader(L("🎯 Batch uncertainty report", "🎯 تقرير عدم اليقين للدفعة"))
+        u1, u2, u3 = st.columns(3)
+        u1.metric(L("Predictions below 'trust'", "تنبؤات دون «أثق به»"), f"{ur['below_trust_pct']}%")
+        u2.metric(L("Mean stability", "متوسط الثبات"), f"{ur['mean_stability']}%")
+        u3.metric(L("Inside / edge / outside domain", "داخل / حافة / خارج النطاق"), f"{ur['domain']['in']} / {ur['domain']['edge']} / {ur['domain']['out']}")
+        st.dataframe(pd.DataFrame(ur["rows"]), hide_index=True)
+        st.caption(L("A calibration curve needs held-out predictions that are not stored with the model, so it is not shown. We do not invent one.", "منحنى المعايرة يحتاج تنبؤات على بيانات اختبار غير محفوظة مع النموذج، لذلك لا نعرضه ولا نختلق واحداً."))
+        st.info(v7.SCOPE[lang])
         st.subheader(t["summary"])
         k1, k2, k3, k4 = st.columns(4)
         k1.metric(t["rows"], len(res)); k2.metric(t["n_dl"], sum(r["rules"]["lipinski_viol"] == 0 for r in res))
@@ -256,6 +279,9 @@ with tab2:
         sort_by = st.selectbox(t["sort"], ["QED", "confidence", "LogS", "BBB_prob", "tox_flag_count"])
         table = pd.DataFrame([flat(r) for r in res]).sort_values(sort_by, ascending=(sort_by == "tox_flag_count")).reset_index(drop=True)
         st.dataframe(table)
+        dl = [dossier.build(r_, model, None, lang, "batch") for r_ in res]
+        st.download_button(L("Dossier for all (JSON)", "ملف الأدلة للجميع (JSON)"), json.dumps(dl, ensure_ascii=False, indent=2, default=str), "dossier_batch.json", "application/json", key="dl_batch_dos")
+        st.download_button(L("Dossier for all (HTML)", "ملف الأدلة للجميع (HTML)"), "<hr style='page-break-after:always'>".join(dossier.html_report(x, lang) for x in dl), "dossier_batch.html", "text/html", key="dl_batch_dosh")
         st.download_button(t["dl_csv"], table.to_csv(index=False), "molsolveai_batch.csv", "text/csv", key="dl_batch_csv")
         st.download_button(t["dl_full"], json.dumps(res, ensure_ascii=False, indent=2), "molsolveai_batch_full.json",
                            "application/json", key="dl_batch_json")
@@ -292,6 +318,12 @@ with tab_cmp:
             ov, _ = ultra.verdict(r, lang)
             col.markdown(f"**{ultra.DOT[ov]} {n}**")
             col.image(Draw.MolToImage(Chem.MolFromSmiles(r["smiles"]), size=(220, 180)))
+        st.subheader(L("Ranking with reasons", "الترتيب مع المبررات"))
+        for i_, x in enumerate(v7.rank_candidates(C, model, lang), 1):
+            st.markdown(f"**{i_}. {x['name']}**")
+            st.write(L("Strengths: ", "نقاط القوة: ") + (", ".join(x["good"]) or "-"))
+            st.write(L("Limits: ", "القيود: ") + ("; ".join(x["bad"]) or "-"))
+        st.caption(v7.RULE[lang])
         tbl = pd.DataFrame([{"name": n, **{k: v for k, v in flat(r).items() if k != "smiles"}} for n, r in C]).set_index("name").T.astype(str)
         st.dataframe(tbl, height=700)
 
@@ -387,6 +419,18 @@ with tab_quiz:
 with tab_card:
     st.markdown(v6.MODEL_CARD[lang])
     st.table(pd.DataFrame({"task": list(model.test_metrics), "score": [", ".join(f"{k} {v:.2f}" for k, v in m.items()) for m in model.test_metrics.values()]}))
+    bl = v7.baseline()
+    if bl:
+        st.subheader(L("Comparison with simple baselines", "مقارنة مع خطوط أساس بسيطة"))
+        rows = []
+        for tk, v in bl["tasks"].items():
+            rf = v.get("random_forest", {}); rg = v.get("ridge_descriptors")
+            met = "R2" if "R2" in rf else "AUC"
+            rows.append({L("task", "الاختبار"): tk, L("our reported", "رقمنا المعلن"): f"{model.test_metrics.get(tk, {}).get(met, float('nan')):.2f}",
+                         L("random forest (baseline)", "غابة عشوائية (أساس)"): f"{rf[met]:.2f}",
+                         L("ridge (baseline)", "ريدج (أساس)"): f"{rg['R2']:.2f}" if rg else "-", L("metric", "المقياس"): met})
+        st.dataframe(pd.DataFrame(rows), hide_index=True)
+        st.warning(v7.BASE_NOTE[lang])
     st.subheader(L("Transparent check on well-known drugs (brain penetration)", "فحص شفاف على أدوية معروفة (عبور الدماغ)"))
     st.caption(L("Expected values are textbook knowledge. Many of these drugs may be in the training data, so a match here is NOT proof of accuracy on new molecules. Check the similarity column.",
                  "القيم المتوقعة معرفة عامة في الكتب. كثير من هذه الأدوية قد يكون في بيانات التدريب، فالتطابق هنا ليس دليلاً على الدقة في جزيئات جديدة. انظر عمود التشابه."))
@@ -409,3 +453,22 @@ with tab4:
     st.write(L("What makes it different: it explains WHY (atom-level maps), suggests better molecules for a goal (Optimizer), compares molecules visually, and teaches with a quiz.",
                "ما يميّزه: يشرح لماذا (خرائط على مستوى الذرات)، ويقترح جزيئات أفضل لهدف محدد (المحسّن)، ويقارن الجزيئات بصرياً، ويعلّم بتحدٍ تفاعلي."))
     st.write(t["about"]); st.success(t["acc"]); st.caption(t["disc"])
+
+
+with tab_ver:
+    st.write(L("Upload a dossier JSON made by this app. We recompute it from its molecule and compare the report ID and model fingerprint.", "ارفع ملف JSON لملف أدلة صدر من هذا التطبيق. نعيد حسابه من جزيئه ونقارن رقم التقرير وبصمة النموذج."))
+    vf = st.file_uploader(L("Dossier JSON", "ملف الأدلة JSON"), type=["json"], key="ver_up")
+    if vf is not None:
+        try:
+            old = json.load(vf)
+            old = old[0] if isinstance(old, list) else old
+            r2 = analyze(old["identity"]["canonical_smiles"])
+            new = dossier.build(r2, model, None, lang)
+            same_model = old["reproducibility"]["model_sha256"] == new["reproducibility"]["model_sha256"]
+            same_id = old["report_id"] == new["report_id"]
+            (st.success if same_id else st.warning)(L("Report ID matches: results reproduced exactly.", "رقم التقرير مطابق: النتائج أُعيدت كما هي.") if same_id else L("Report ID differs.", "رقم التقرير مختلف."))
+            if not same_id:
+                st.write(L("Same model fingerprint: ", "بصمة النموذج نفسها: ") + (L("yes (the file may have been edited or made by another app version)", "نعم (ربما عُدّل الملف أو صدر من نسخة تطبيق أخرى)") if same_model else L("no (made with a different model version)", "لا (صدر بنسخة نموذج مختلفة)")))
+            st.caption(f"{old['report_id']} / {new['report_id']}")
+        except Exception:
+            st.error(L("This file is not a valid dossier JSON.", "هذا الملف ليس ملف أدلة صالحاً."))

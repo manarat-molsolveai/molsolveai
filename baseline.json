@@ -1,0 +1,83 @@
+{
+ "split": "scaffold 80/10/10, deterministic (largest scaffold groups to train)",
+ "tasks": {
+  "LogS": {
+   "n_test": 114,
+   "ridge_descriptors": {
+    "R2": 0.8145983817020739,
+    "RMSE": 0.9105542119147978
+   },
+   "random_forest": {
+    "R2": 0.8254919316175391,
+    "RMSE": 0.8833987959472421
+   }
+  },
+  "BBB": {
+   "n_test": 205,
+   "random_forest": {
+    "AUC": 0.7481403776463856
+   }
+  },
+  "NR-AR": {
+   "random_forest": {
+    "AUC": 0.7031922911283377
+   }
+  },
+  "NR-AR-LBD": {
+   "random_forest": {
+    "AUC": 0.8064375815571988
+   }
+  },
+  "NR-AhR": {
+   "random_forest": {
+    "AUC": 0.8547384827139503
+   }
+  },
+  "NR-Aromatase": {
+   "random_forest": {
+    "AUC": 0.7261308778830682
+   }
+  },
+  "NR-ER": {
+   "random_forest": {
+    "AUC": 0.7558293978748524
+   }
+  },
+  "NR-ER-LBD": {
+   "random_forest": {
+    "AUC": 0.7477772754671488
+   }
+  },
+  "NR-PPAR-gamma": {
+   "random_forest": {
+    "AUC": 0.7697271083347033
+   }
+  },
+  "SR-ARE": {
+   "random_forest": {
+    "AUC": 0.7319302423308587
+   }
+  },
+  "SR-ATAD5": {
+   "random_forest": {
+    "AUC": 0.7680798596291555
+   }
+  },
+  "SR-HSE": {
+   "random_forest": {
+    "AUC": 0.8075177304964538
+   }
+  },
+  "SR-MMP": {
+   "random_forest": {
+    "AUC": 0.8778375589622642
+   }
+  },
+  "SR-p53": {
+   "random_forest": {
+    "AUC": 0.7900612305854241
+   }
+  }
+ },
+ "tox21_mean_AUC_random_forest": 0.778271636413618
+}
