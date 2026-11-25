@@ -45,6 +45,14 @@ def test_known_drug_brain_check_does_not_get_worse(model):
     assert len(rows) == 15 and hit >= 10
 
 
+def test_every_miss_has_an_explanation(model):
+    rows, hit = v6.check_known(lambda s, p: analyze(model, s, p), ultra.LIB)
+    for r in rows:
+        if r["match"] != "✅":
+            assert r["note_ar"] and r["note_en"], r["drug"]
+        assert "bbbp_label" in r
+
+
 def test_applicability_domain_bands(model):
     assert v6.domain(canonical("CC(=O)Oc1ccccc1C(=O)O"))["band"] == "in"
     assert v6.domain(canonical("C"))["band"] in ("edge", "out", "in")

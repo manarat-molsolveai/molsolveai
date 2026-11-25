@@ -1,0 +1,81 @@
+{
+ "source": "MoleculeNet BBBP (public), matched by InChIKey connectivity block",
+ "note": "Generated offline by make_known_bbb_evidence step; labels in the dataset can be noisy.",
+ "drugs": {
+  "Caffeine": {
+   "textbook_expected": true,
+   "bbbp_dataset_label": 1,
+   "in_bbbp_dataset": true
+  },
+  "Diazepam": {
+   "textbook_expected": true,
+   "bbbp_dataset_label": 1,
+   "in_bbbp_dataset": true
+  },
+  "Morphine": {
+   "textbook_expected": true,
+   "bbbp_dataset_label": 1,
+   "in_bbbp_dataset": true
+  },
+  "Nicotine": {
+   "textbook_expected": true,
+   "bbbp_dataset_label": 1,
+   "in_bbbp_dataset": true
+  },
+  "Fluoxetine": {
+   "textbook_expected": true,
+   "bbbp_dataset_label": 1,
+   "in_bbbp_dataset": true
+  },
+  "Sertraline": {
+   "textbook_expected": true,
+   "bbbp_dataset_label": null,
+   "in_bbbp_dataset": false
+  },
+  "Lidocaine": {
+   "textbook_expected": true,
+   "bbbp_dataset_label": 1,
+   "in_bbbp_dataset": true
+  },
+  "Dopamine": {
+   "textbook_expected": false,
+   "bbbp_dataset_label": 0,
+   "in_bbbp_dataset": true
+  },
+  "Atenolol": {
+   "textbook_expected": false,
+   "bbbp_dataset_label": 0,
+   "in_bbbp_dataset": true
+  },
+  "Penicillin G": {
+   "textbook_expected": false,
+   "bbbp_dataset_label": 0,
+   "in_bbbp_dataset": true
+  },
+  "Amoxicillin": {
+   "textbook_expected": false,
+   "bbbp_dataset_label": null,
+   "in_bbbp_dataset": false
+  },
+  "Metformin": {
+   "textbook_expected": false,
+   "bbbp_dataset_label": null,
+   "in_bbbp_dataset": false
+  },
+  "Acyclovir": {
+   "textbook_expected": false,
+   "bbbp_dataset_label": 1,
+   "in_bbbp_dataset": true
+  },
+  "Ranitidine": {
+   "textbook_expected": false,
+   "bbbp_dataset_label": 0,
+   "in_bbbp_dataset": true
+  },
+  "Cetirizine": {
+   "textbook_expected": false,
+   "bbbp_dataset_label": 0,
+   "in_bbbp_dataset": true
+  }
+ }
+}

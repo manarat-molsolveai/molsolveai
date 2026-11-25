@@ -256,6 +256,24 @@ KNOWN_BBB = {"Caffeine": True, "Diazepam": True, "Morphine": True, "Nicotine": T
              "Metformin": False, "Acyclovir": False, "Ranitidine": False, "Cetirizine": False}
 
 
+import json as _json, os as _os
+try:
+    EVID = _json.load(open(_os.path.join(_os.path.dirname(__file__), "known_bbb_evidence.json")))["drugs"]
+except Exception:
+    EVID = {}
+
+KNOWN_NOTES = {
+ "Atenolol": ("النموذج يخالف تصنيف بيانات تدريبه نفسها (لا يعبر). دواء قطبي ومحب للماء؛ خطأ حقيقي في النموذج.",
+              "The model disagrees with its own training label (does not cross). A polar, hydrophilic drug; a real model error."),
+ "Cetirizine": ("البيانات تقول لا يعبر والنموذج يخالفها. الدواء مادة تُطرد بمضخة P-gp، وهذا لا تلتقطه الخصائص البسيطة؛ خطأ حقيقي.",
+                "Data says it does not cross; the model disagrees. It is a P-gp efflux substrate, which simple properties do not capture; a real error."),
+ "Acyclovir": ("جدلي: بيانات BBBP تصنّفه يعبر، وجدول الكتب يقول لا. نفاذيته للدماغ ضعيفة لكن ليست معدومة؛ ليس بالضرورة خطأ نموذج.",
+               "Disputed: BBBP labels it as crossing, the textbook table says no. Its brain penetration is low but not zero; not necessarily a model error."),
+ "Metformin": ("غير موجود في بيانات التدريب، فالنموذج يخمّن خارج نطاقه.",
+               "Not in the training data, so the model is guessing outside its domain."),
+}
+
+
 def check_known(analyze, lib):
     rows, hit = [], 0
     for n, truth in KNOWN_BBB.items():
@@ -265,7 +283,9 @@ def check_known(analyze, lib):
         ok = (p > 0.5) == truth
         hit += ok
         rows.append({"drug": n, "expected_crosses_brain": truth, "model_prob_%": round(p * 100), "match": "✅" if ok else "❌",
-                     "max_similarity_to_training": domain(lib[n])["max_sim"]})
+                     "max_similarity_to_training": domain(lib[n])["max_sim"],
+                     "bbbp_label": (EVID.get(n) or {}).get("bbbp_dataset_label"),
+                     "note_ar": KNOWN_NOTES.get(n, ("", ""))[0] if not ok else "", "note_en": KNOWN_NOTES.get(n, ("", ""))[1] if not ok else ""})
     return rows, hit
 
 

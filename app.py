@@ -450,7 +450,14 @@ with tab_card:
     if st.button(L("Run the check", "شغّل الفحص")):
         rows, hit = v6.check_known(analyze, ultra.LIB)
         st.metric(L("Matches", "التطابق"), f"{hit} / {len(rows)}")
-        st.dataframe(pd.DataFrame(rows), hide_index=True)
+        _nk = "note_en" if lang == "en" else "note_ar"
+        _disp = [{L("drug", "الدواء"): r["drug"], L("textbook: crosses", "الكتب: يعبر"): r["expected_crosses_brain"],
+                  L("BBBP dataset label", "تصنيف BBBP"): (L("not in data", "غير موجود") if r["bbbp_label"] is None else ("1" if r["bbbp_label"] else "0")),
+                  L("model %", "النموذج %"): r["model_prob_%"], L("match", "تطابق"): r["match"],
+                  L("max similarity", "أقصى تشابه"): r["max_similarity_to_training"], L("why wrong", "سبب الخطأ"): r[_nk]} for r in rows]
+        st.dataframe(pd.DataFrame(_disp), hide_index=True)
+        st.info(L("We did not tune the model to reach 15/15: that would be fitting the test. Textbook labels are simplified and the BBBP labels are noisy. P-gp efflux, which keeps some drugs out of the brain, is not captured by simple properties.",
+                  "لم نضبط النموذج للوصول إلى 15/15 لأن ذلك تطويع للاختبار. تصنيفات الكتب مبسّطة وتصنيفات BBBP فيها ضجيج. ومضخات الطرد P-gp التي تمنع بعض الأدوية من دخول الدماغ لا تلتقطها الخصائص البسيطة."))
 
 with tab3:
     st.subheader(t["plans_head"])
