@@ -185,7 +185,12 @@ def share_card(r, sav, mpo, ov):
     ax.add_patch(plt.Rectangle((0.04, 0.27), 0.92, 0.55, color="white", zorder=1))
     ax2 = fig.add_axes([0.1, 0.3, 0.8, 0.5]); ax2.imshow(img); ax2.axis("off")
     ax.text(0.5, 0.925, "MolSolveAI", color="white", ha="center", fontsize=32, fontweight="bold")
-    ax.text(0.5, 0.88, "Manarat Al-Ibdaa", color="#f5b301", ha="center", fontsize=17, fontweight="bold")
+    from matplotlib import font_manager as fm
+    fp = fm.FontProperties(fname=str(_HERE / "NotoSansArabic-Bold.ttf")) if (_HERE / "NotoSansArabic-Bold.ttf").exists() else None
+    if fp is not None:
+        ax.text(0.5, 0.885, _ar("منارة الإبداع"), color="#f5b301", ha="center", fontsize=21, fontproperties=fp)
+    else:
+        ax.text(0.5, 0.88, "Manarat Al-Ibdaa", color="#f5b301", ha="center", fontsize=17, fontweight="bold")
     col = {"green": "#f5b301", "yellow": "#f5b301", "red": "#ff8a80"}[ov]
     lab = {"green": "Promising", "yellow": "Mixed signals", "red": "Risky"}[ov]
     ax.text(0.5, 0.845, f"Overall: {lab}", color=col, ha="center", fontsize=17, fontweight="bold")
@@ -194,8 +199,9 @@ def share_card(r, sav, mpo, ov):
              f"Solubility LogS {ts['LogS']['value']:.1f}  |  Brain {ts['BBB']['prob']*100:.0f}%",
              f"Tox signals {len(r['tox_flags'])}/12  |  SA {sav if sav is not None else '-'}  |  CNS-MPO {mpo}/4"]
     for i, l in enumerate(lines):
-        ax.text(0.5, 0.2 - i * 0.05, l, color="white", ha="center", fontsize=13)
-    ax.text(0.5, 0.03, "AI estimate for learning only, not medical advice", color="#cfe3f7", ha="center", fontsize=9)
+        ax.text(0.5, 0.205 - i * 0.043, l, color="white", ha="center", fontsize=13)
+    ax.text(0.5, 0.058, "Manarat Al-Ibdaa  |  MolSolveAI", color="#f5b301", ha="center", fontsize=11, fontweight="bold")
+    ax.text(0.5, 0.022, "AI estimate for learning only, not medical advice", color="#cfe3f7", ha="center", fontsize=9)
     b = io.BytesIO(); fig.savefig(b, format="png", facecolor=fig.get_facecolor()); plt.close(fig)
     return b.getvalue()
 

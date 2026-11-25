@@ -7,3 +7,5 @@ matplotlib
 streamlit-ketcher
 
 Pillow
+arabic-reshaper
+python-bidi
