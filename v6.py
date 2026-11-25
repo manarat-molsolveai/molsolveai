@@ -135,6 +135,9 @@ def detective(r, ad, sav, mpo, lang="ar"):
         fixes.append("افحص الخريطة الذرية لمعرفة الذرات المسؤولة وعدّلها." if ar else "Check the atom map to find responsible atoms and edit them.")
     if r["alerts"]:
         probs.append(("فيه مجموعات تُعرف بالتنبيهات البنيوية: %s." % "، ".join(r["alerts"][:3])) if ar else "Contains known structural alerts: %s." % ", ".join(r["alerts"][:3]))
+    if r["alerts"]:
+        fixes.append("راجع المجموعة المنبّهة: قد تكون مقبولة في سياقك أو تحتاج استبدالاً بمجموعة أكثر ثباتاً." if ar
+                     else "Review the flagged group: it may be acceptable in your context or need swapping for a more stable one.")
     if sav is not None and sav > 6:
         probs.append(("تصنيعه صعب (SA %.1f) فأي تحسين مقترح عليه قد لا يكون عملياً." % sav) if ar else "Hard to synthesize (SA %.1f); improvements may be impractical." % sav)
     good = []
@@ -152,8 +155,9 @@ def detective(r, ad, sav, mpo, lang="ar"):
     else:
         out.append("لا نقاط قوة بارزة." if ar else "No standout strengths.")
     if probs:
-        out.append(("⚠️ المشاكل:\n" if ar else "⚠️ Problems:\n") + "\n".join("• " + p for p in probs))
-        out.append(("🔧 خطوات مقترحة:\n" if ar else "🔧 Suggested steps:\n") + "\n".join("%d. %s" % (i + 1, f) for i, f in enumerate(dict.fromkeys(fixes))))
+        out.append(("⚠️ المشاكل:\n\n" if ar else "⚠️ Problems:\n\n") + "\n\n".join("- " + p for p in probs))
+        if fixes:
+            out.append(("🔧 خطوات مقترحة:\n\n" if ar else "🔧 Suggested steps:\n\n") + "\n\n".join("%d) %s" % (i + 1, f) for i, f in enumerate(dict.fromkeys(fixes))))
     else:
         out.append("✅ لا مشاكل كبيرة ظاهرة." if ar else "✅ No major problems visible.")
     out.append(("🔎 موثوقية التحليل: " if ar else "🔎 Reliability: ") + AD_TXT[ad["band"]][1 if ar else 2])
