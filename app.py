@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 from rdkit import Chem
 from rdkit.Chem import Draw
-import config, infer, druglike, ultra, ultra2, v6
+import config, infer, druglike, ultra, ultra2, v6, dossier
 from chem import canonical
 from i18n import T, PLANS
 
@@ -115,6 +115,20 @@ def render(r, key):
         st.dataframe(pd.DataFrame({L("prediction", "التنبؤ"): [x[0] for x in tt],
                                    L("trust", "الثقة"): [f"{v6.TRUST_ICON[x[1]]} {v6.TRUST_NAME[lang][x[1]]}" for x in tt],
                                    L("why", "السبب"): [x[2] for x in tt]}), hide_index=True, height=520)
+    with st.expander(L("📁 Evidence Dossier (status, axes, reproducibility)", "📁 ملف الأدلة (الحالة، المحاور، إعادة الإنتاج)")):
+        pcx = st.checkbox(L("Check PubChem presence (needs internet)", "افحص وجوده في PubChem (يحتاج إنترنت)"), key=f"pc_{key}")
+        d = dossier.build(r, model, dossier.pubchem(r["smiles"]) if pcx else None, lang)
+        st.caption(f"{L('Report ID', 'رقم التقرير')}: {d['report_id']}  |  InChIKey: {d['identity']['inchikey']}")
+        st.markdown(f"**{L('Six axes, no single score', 'محاور ستة، بلا درجة واحدة')}**")
+        for a in d["axes"]:
+            st.write(f"{dossier.ICON[a['level']]} **{a['axis']}**: {a['why']}")
+        st.markdown(f"**{L('Verification status', 'حالة التحقق')}**")
+        st.table(pd.DataFrame([{**v, "status": dossier.VS[lang][v["status"]]} for v in d["validation"]]).rename(columns={"item": L("item", "البند"), "status": L("status", "الحالة"), "note": L("note", "ملاحظة")}))
+        st.caption(f"{dossier.TAG[lang]['calc']} / {dossier.TAG[lang]['pred']} / {dossier.TAG[lang]['unverified']}")
+        st.json(d["reproducibility"], expanded=False)
+        e1, e2 = st.columns(2)
+        e1.download_button(L("Dossier (HTML)", "الملف (HTML)"), dossier.html_report(d, lang), f"dossier_{d['report_id']}.html", "text/html", key=f"dh_{key}")
+        e2.download_button(L("Dossier (JSON)", "الملف (JSON)"), json.dumps(d, ensure_ascii=False, indent=2, default=str), f"dossier_{d['report_id']}.json", key=f"dj_{key}")
     rc1, rc2 = st.columns(2)
     rc1.caption(t["radar"]); rc1.pyplot(ultra.radar([("", r)]))
     rc2.caption(t["similar"])
