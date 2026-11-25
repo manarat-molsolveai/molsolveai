@@ -144,6 +144,14 @@ def build(r, model, pc=None, lang="ar"):
     return d
 
 
+def pc_cell(p, ar):
+    st_ = p.get("status")
+    if st_ == "found":
+        return (("موجود، CID %s " if ar else "Found, CID %s ") % p["cid"]) + "<a href='%s'>%s</a>" % (html.escape(p["url"]), "PubChem")
+    return {"not_found": "غير موجود بهذه البنية" if ar else "Not found with this structure",
+            "unavailable": "تعذّر الاتصال بـ PubChem" if ar else "PubChem unreachable"}.get(st_, "لم يُفحص" if ar else "Not checked")
+
+
 def html_report(d, lang="ar"):
     ar = lang == "ar"
     e = html.escape
@@ -159,7 +167,7 @@ def html_report(d, lang="ar"):
            f"<tr><td>SMILES</td><td><code>{e(i['canonical_smiles'])}</code></td></tr>",
            f"<tr><td>InChIKey</td><td>{e(i['inchikey'])}</td></tr><tr><td>{T('الصيغة','Formula')}</td><td>{e(i['formula'])}</td></tr>",
            f"<tr><td>{T('المصدر','Source')}</td><td>{e(i['source'])}</td></tr>",
-           f"<tr><td>PubChem</td><td>{e(json.dumps(i['pubchem'], ensure_ascii=False))}</td></tr></table>",
+           f"<tr><td>PubChem</td><td>{pc_cell(i['pubchem'], ar)}</td></tr></table>",
            f"<h2>2. {T('الخصائص','Properties')} <span class='tag'>{e(d['properties']['tag'])}</span></h2><table>"]
     out += [f"<tr><td>{e(str(k))}</td><td>{e(str(v))}</td></tr>" for k, v in d["properties"]["values"]]
     out.append(f"</table><h2>3. {T('تنبؤ الذكاء الاصطناعي','AI prediction')} <span class='tag'>{e(d['prediction']['tag'])}</span></h2><table>")
