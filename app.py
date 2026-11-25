@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 from rdkit import Chem
 from rdkit.Chem import Draw
-import config, infer, druglike, ultra, ultra2
+import config, infer, druglike, ultra, ultra2, v6
 from chem import canonical
 from i18n import T, PLANS
 
@@ -79,10 +79,13 @@ def analyze(smi, passes=30):
     r["alerts"] = druglike.alerts(c)
     r["confidence"] = druglike.confidence(r)
     r["tox_flags"] = druglike.tox_summary(r, config.TOX21_TASKS)
+    r["ad"] = v6.domain(c)
+    r["sa"] = v6.sa(c)
+    r["mpo"] = v6.cns_mpo(r["rules"])
     return r
 
 
-tab1, tab2, tab_cmp, tab_opt, tab_quiz, tab3, tab4 = st.tabs([t["tab_single"], t["tab_batch"], t["tab_cmp"], L("Optimizer", "محسّن الجزيء"), L("Challenge", "تحدي الكيمياء"), t["tab_plans"], t["tab_about"]])
+tab1, tab2, tab_cmp, tab_opt, tab_teach, tab_quiz, tab_card, tab3, tab4 = st.tabs([t["tab_single"], t["tab_batch"], t["tab_cmp"], L("Optimizer", "محسّن الجزيء"), L("Teacher mode", "وضع المعلم"), L("Challenge", "تحدي الكيمياء"), L("Model card", "بطاقة النموذج"), t["tab_plans"], t["tab_about"]])
 
 def render(r, key):
     R, ts = r["rules"], r["tasks"]
@@ -96,6 +99,22 @@ def render(r, key):
     st.subheader(f"{ultra.DOT[ov]} {t['verdict']}")
     for col, txt in items:
         st.write(f"{ultra.DOT[col]} {txt}")
+    ad = r["ad"]; ic, ta, te = v6.AD_TXT[ad["band"]]
+    (st.success if ad["band"] == "in" else st.warning if ad["band"] == "edge" else st.error)(
+        f"{ic} {L(te, ta)}  ({L('max similarity', 'أعلى تشابه')} {ad['max_sim']})")
+    s1, s2, s3 = st.columns(3)
+    s1.metric(L("Synthetic accessibility (SA)", "سهولة التصنيع (SA)"), r["sa"] if r["sa"] is not None else "-",
+              help=L("1 = very easy, 10 = very hard. Ertl score from RDKit.", "1 سهل جداً، 10 صعب جداً. درجة Ertl من RDKit."))
+    s1.caption(v6.sa_text(r["sa"], lang == "ar"))
+    s2.metric("CNS-MPO", f"{r['mpo']}/4", help=L("Simplified (4 of 6 criteria). Higher = better for brain drugs.", "نسخة مبسطة (4 من 6 معايير). الأعلى أفضل لأدوية الدماغ."))
+    s3.metric(L("Heavy atoms", "الذرات الثقيلة"), R["heavy"])
+    with st.expander(L("🕵️ Molecule Detective (plain explanation)", "🕵️ محقق الجزيء (شرح مبسط)"), expanded=True):
+        st.write(v6.detective(r, ad, r["sa"], r["mpo"], lang))
+    with st.expander(L("🔎 Trust table: how much to trust each prediction", "🔎 جدول الثقة: كم أثق بكل تنبؤ")):
+        tt = v6.trust_table(r, ad, model.test_metrics, lang)
+        st.dataframe(pd.DataFrame({L("prediction", "التنبؤ"): [x[0] for x in tt],
+                                   L("trust", "الثقة"): [f"{v6.TRUST_ICON[x[1]]} {v6.TRUST_NAME[lang][x[1]]}" for x in tt],
+                                   L("why", "السبب"): [x[2] for x in tt]}), hide_index=True, height=520)
     rc1, rc2 = st.columns(2)
     rc1.caption(t["radar"]); rc1.pyplot(ultra.radar([("", r)]))
     rc2.caption(t["similar"])
@@ -123,6 +142,11 @@ def render(r, key):
     st.image(ultra2.heatmap_png(r["smiles"], sc))
     st.caption(L("Red atoms push the prediction UP, blue atoms push it DOWN. Approximate: it masks each atom in the graph part of the model only.",
                  "الذرات الحمراء ترفع قيمة التنبؤ، والزرقاء تخفضها. تقريبي: يخفي كل ذرة في الجزء الرسومي من النموذج فقط."))
+    try:
+        st.download_button(L("🖼️ Share card (PNG)", "🖼️ بطاقة مشاركة (صورة)"), v6.share_card(r, r["sa"], r["mpo"], ov), f"molsolveai_card_{key}.png",
+                           "image/png", key=f"dlc_{key}")
+    except Exception:
+        pass
     st.download_button(t["dl_json"], json.dumps(r, ensure_ascii=False, indent=2), f"molsolveai_{key}.json",
                        "application/json", key=f"dl_{key}")
     st.download_button(t["dl_html"], ultra.html_report([r], lang, t, config.TOX21_TASKS), f"molsolveai_{key}.html",
@@ -264,7 +288,8 @@ with tab_opt:
     o_extra = st.text_input(L("...or your own SMILES (optional)", "...أو SMILES خاص بك (اختياري)"), "")
     goals = {"sol": L("Higher solubility", "ذوبانية أعلى"), "tox": L("Lower toxicity signals", "إشارات سمّية أقل"),
              "bbb_up": L("Better brain penetration", "عبور أفضل للدماغ"), "bbb_down": L("Less brain penetration", "عبور أقل للدماغ"),
-             "qed": L("Higher drug-likeness (QED)", "شبه دواء أعلى (QED)")}
+             "qed": L("Higher drug-likeness (QED)", "شبه دواء أعلى (QED)"),
+             "balanced": L("Balanced (QED + solubility + fewer tox flags + easier to make)", "متوازن (QED وذوبانية وسمّية أقل وتصنيع أسهل)")}
     goal = st.selectbox(L("Goal", "الهدف"), list(goals), format_func=lambda k: goals[k])
     if st.button(L("Optimize", "حسّن")):
         base_smi = o_extra.strip() or ultra.LIB[o_name]
@@ -286,10 +311,36 @@ with tab_opt:
             c0.image(Draw.MolToImage(Chem.MolFromSmiles(s_), size=(240, 190)))
             ov_, _ = ultra.verdict(r_, lang)
             c1.markdown(f"**#{rank} {ultra.DOT[ov_]} {name_}**  \n`{s_}`")
-            c1.write(f"LogS {r_['tasks']['LogS']['value']:.2f} | BBB {r_['tasks']['BBB']['prob']*100:.0f}% | QED {r_['rules']['qed']:.2f} | tox flags {len(r_['tox_flags'])}")
+            bt = base["tasks"]
+            def dl(a, b, f="{:+.2f}"):
+                return f.format(a - b)
+            c1.write(f"LogS {r_['tasks']['LogS']['value']:.2f} ({dl(r_['tasks']['LogS']['value'], bt['LogS']['value'])}) | BBB {r_['tasks']['BBB']['prob']*100:.0f}% ({dl(r_['tasks']['BBB']['prob']*100, bt['BBB']['prob']*100, '{:+.0f}')}) | QED {r_['rules']['qed']:.2f} ({dl(r_['rules']['qed'], base['rules']['qed'])}) | tox flags {len(r_['tox_flags'])} ({len(r_['tox_flags']) - len(base['tox_flags']):+d})")
+            c1.write(f"SA {r_['sa']} ({v6.sa_text(r_['sa'], lang == 'ar')}) | {v6.AD_TXT[r_['ad']['band']][0]} {L('domain', 'النطاق')}")
+            if rank <= 3:
+                c1.caption(L("Why this step: ", "لماذا هذه الخطوة: ") + name_ + " → " + L("compare before/after above; the change that moves your goal most with the smallest edit.", "قارن قبل/بعد أعلاه؛ أكثر تغيير يحرّك هدفك بأصغر تعديل."))
             c1.write(f"{L('Improvement score', 'درجة التحسن')}: +{delta:.2f}")
         st.warning(L("These are virtual ideas scored by an estimate model. They are NOT tested, may be hard or impossible to make, and may be worse in reality.",
                      "هذه أفكار افتراضية يقيّمها نموذج تقديري. لم تُختبر، وقد يصعب أو يستحيل تصنيعها، وقد تكون أسوأ في الواقع."))
+
+with tab_teach:
+    st.write(L("Make a printable worksheet and answer key from any molecules. Answers are exact RDKit calculations.",
+               "أنشئ ورقة عمل ومفتاح إجابة قابلين للطباعة من أي جزيئات. الإجابات حسابات RDKit دقيقة."))
+    tp = st.multiselect(L("Pick molecules (up to 5)", "اختر جزيئات (حتى 5)"), list(ultra.LIB), default=["Aspirin", "Caffeine"], max_selections=5, key="tp")
+    tx = st.text_area(L("Extra SMILES, one per line (optional)", "SMILES إضافية، سطر لكل جزيء (اختياري)"), height=60, key="tx")
+    sch = st.text_input(L("School / class name (optional)", "اسم المدرسة أو الصف (اختياري)"), "")
+    if st.button(L("Create worksheet", "أنشئ الورقة")):
+        its = []
+        for n_ in tp:
+            its.append((n_, ultra.LIB[n_], druglike.rules(ultra.LIB[n_])))
+        for x in [y.strip() for y in tx.splitlines() if y.strip()][:5]:
+            c_ = canonical(x)
+            if c_:
+                its.append((c_[:20], c_, druglike.rules(c_)))
+        st.session_state.sheet = v6.teacher_sheet(its, lang, sch) if its else None
+    if st.session_state.get("sheet"):
+        st.success(L("Ready.", "جاهزة."))
+        st.download_button(L("⬇️ Download worksheet + answer key (HTML, print as PDF)", "⬇️ تنزيل الورقة ومفتاح الإجابة (HTML، اطبعها PDF)"), st.session_state.sheet,
+                           "molsolveai_worksheet.html", "text/html", key="dl_sheet")
 
 with tab_quiz:
     st.write(L("Test your chemistry intuition. Answers use exact RDKit calculations, not AI guesses.",
@@ -318,6 +369,17 @@ with tab_quiz:
         ok, nm_, fact_ = st.session_state.qres
         (st.success if ok else st.error)(f"{'✅' if ok else '❌'} {nm_}: {fact_}")
     st.metric(L("Score", "النتيجة"), f"{st.session_state.score[0]} / {st.session_state.score[1]}")
+
+with tab_card:
+    st.markdown(v6.MODEL_CARD[lang])
+    st.table(pd.DataFrame({"task": list(model.test_metrics), "score": [", ".join(f"{k} {v:.2f}" for k, v in m.items()) for m in model.test_metrics.values()]}))
+    st.subheader(L("Transparent check on well-known drugs (brain penetration)", "فحص شفاف على أدوية معروفة (عبور الدماغ)"))
+    st.caption(L("Expected values are textbook knowledge. Many of these drugs may be in the training data, so a match here is NOT proof of accuracy on new molecules. Check the similarity column.",
+                 "القيم المتوقعة معرفة عامة في الكتب. كثير من هذه الأدوية قد يكون في بيانات التدريب، فالتطابق هنا ليس دليلاً على الدقة في جزيئات جديدة. انظر عمود التشابه."))
+    if st.button(L("Run the check", "شغّل الفحص")):
+        rows, hit = v6.check_known(analyze, ultra.LIB)
+        st.metric(L("Matches", "التطابق"), f"{hit} / {len(rows)}")
+        st.dataframe(pd.DataFrame(rows), hide_index=True)
 
 with tab3:
     st.subheader(t["plans_head"])

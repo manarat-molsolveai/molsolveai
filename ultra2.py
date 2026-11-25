@@ -80,6 +80,7 @@ GOALS = {
  "bbb_up": lambda r: r["tasks"]["BBB"]["prob"],
  "bbb_down": lambda r: -r["tasks"]["BBB"]["prob"],
  "qed": lambda r: r["rules"]["qed"],
+ "balanced": lambda r: r["rules"]["qed"] + 0.05 * r["tasks"]["LogS"]["value"] - 0.1 * len(r["tox_flags"]) - 0.05 * max(0.0, (r.get("sa") or 4) - 4),
 }
 
 

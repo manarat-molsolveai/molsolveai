@@ -5,3 +5,5 @@ streamlit
 python-dotenv
 matplotlib
 streamlit-ketcher
+
+Pillow
